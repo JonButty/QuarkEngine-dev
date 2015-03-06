@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{d95d92c2-1b19-4e89-9079-fab045740ce0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{c8a1759e-b185-4870-b00a-f0b32654d47e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{596b0fc8-94ed-47dd-9fa0-eb3499bf7710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{f560b859-d476-4ac6-8cd3-4816e4548693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\vector">
+      <UniqueIdentifier>{8a6163c1-16ad-4bb7-93a8-c16cfc19177e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\angle">
+      <UniqueIdentifier>{d1878c64-a59d-499e-97c4-544c1bbd787b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\interpolate">
+      <UniqueIdentifier>{c2c0027e-ca2a-4974-8423-9026a10397fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\src\common\ReadMe.txt">
+      <Filter>common</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\common\stdafx.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\fileSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\common\stdafx.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\singleton.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\vector4.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\quaternion.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\vector2.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\vector3.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\angle.h">
+      <Filter>math\angle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\interpolate.h">
+      <Filter>math\interpolate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\fileSystem.h">
+      <Filter>util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuarkEngine", "QuarkEngine.vcxproj", "{F32C1709-6646-40C6-99E4-CB8F86D36CAC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuarkTest", "UnitTests.vcxproj", "{06EA45F7-482E-474A-BE2A-0BCDE38A07E8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F32C1709-6646-40C6-99E4-CB8F86D36CAC} = {F32C1709-6646-40C6-99E4-CB8F86D36CAC}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F32C1709-6646-40C6-99E4-CB8F86D36CAC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F32C1709-6646-40C6-99E4-CB8F86D36CAC}.Debug|Win32.Build.0 = Debug|Win32
+		{F32C1709-6646-40C6-99E4-CB8F86D36CAC}.Release|Win32.ActiveCfg = Release|Win32
+		{F32C1709-6646-40C6-99E4-CB8F86D36CAC}.Release|Win32.Build.0 = Release|Win32
+		{06EA45F7-482E-474A-BE2A-0BCDE38A07E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06EA45F7-482E-474A-BE2A-0BCDE38A07E8}.Debug|Win32.Build.0 = Debug|Win32
+		{06EA45F7-482E-474A-BE2A-0BCDE38A07E8}.Release|Win32.ActiveCfg = Release|Win32
+		{06EA45F7-482E-474A-BE2A-0BCDE38A07E8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
