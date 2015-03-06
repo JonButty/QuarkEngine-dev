@@ -1,0 +1,11 @@
+bin/
+*.sdf
+*.log
+*.pch
+*.tlog
+*.lastbuildstate
+*.obj
+*.idb
+*.pdb
+*.ipch
+*.txt
