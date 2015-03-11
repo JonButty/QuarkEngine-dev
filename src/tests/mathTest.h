@@ -17,7 +17,7 @@ public:
     template <typename T>
     static bool Vector2Test()
     {
-        Math::Vec2D vec;
+        QuarkVec2D vec;
         vec.X();
         return true;
     }

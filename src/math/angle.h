@@ -8,318 +8,321 @@
 #ifndef ANGLE_H
 #define ANGLE_H
 
-namespace Math
+template <typename T>
+class QuarkAngle
 {
-    template <typename T>
-    class Angle
+public:
+    virtual T AsRadians() const = 0;
+    virtual T AsDegrees() const = 0;
+    virtual void Simplify() = 0;
+};
+
+template <typename T>
+class QuarkRadian;
+
+template <typename T>
+class QuarkDegree : public QuarkAngle <T>
+{
+public:
+    QuarkDegree()
+        : degrees_(0)
     {
-    public:
-        virtual T AsRadians() const = 0;
-        virtual T AsDegrees() const = 0;
-    };
+    }
 
-    template <typename T>
-    class Radian;
-
-    template <typename T>
-    class Degree : public Angle <T>
+    QuarkDegree(T degrees)
+        : degrees_(degrees)
     {
-    public:
-        Degree()
-            : degrees_(0)
-        {
-        }
+    }
 
-        Degree(T degrees)
-            : degrees_(degrees)
-        {
-        }
-
-        Degree(const Degree<T>& val)
-            : degrees_(val.degrees_)
-        {
-        }
-
-        Degree(const Radian<T>& val)
-            : degrees_(val.AsDegrees())
-        {
-        }
-
-        T AsRadians() const
-        {
-            return degrees_* static_cast<T>(0.0174532925);
-        }
-
-        T AsDegrees() const
-        {
-            return degrees_;
-        }
-
-    public:
-
-        Degree<T> operator+(T degree) const
-        {
-            return Degree<T>(degrees_ + degree);
-        }
-
-        Degree<T> operator+(const Degree<T>& val) const
-        {
-            return Degree<T>(degrees_ + val.degrees_());
-        }
-
-        Degree<T> operator+(const Radian<T>& val) const
-        {
-            return Degree<T>(degrees_ + val.AsDegrees());
-        }
-
-        Degree<T> operator-(T degree) const
-        {
-            return Degree<T>(degrees_ - degree);
-        }
-
-        Degree<T> operator-(const Degree<T>& val) const
-        {
-            return Degree<T>(degrees_ - val.AsDegrees());
-        }
-
-        Degree<T> operator-(const Radian<T>& val) const
-        {
-            return Degree<T>(degrees_ - val.AsDegrees());
-        }
-
-        Degree<T> operator*(T val) const
-        {
-            return Degree<T>(degrees_ * val);
-        }
-
-        Degree<T> operator/(T val) const
-        {
-            return Degree<T>(degrees_ / val);
-        }
-
-        Degree<T>& operator+=(T degree)
-        {
-            degrees_ += degree;
-            return *this;
-        }
-
-        Degree<T>& operator+=(const Degree<T>& val)
-        {
-            degrees_ += val.degrees_;
-            return *this;
-        }
-
-        Degree<T>& operator+=(const Radian<T>& val)
-        {
-            degrees_ += val.AsDegrees();
-            return *this;
-        }
-
-        Degree<T>& operator-=(T degree)
-        {
-            degrees_ -= degree;
-            return *this;
-        }
-
-        Degree<T>& operator-=(const Degree<T>& val)
-        {
-            degrees_ -= val.degrees_;
-            return *this;
-        }
-
-        Degree<T>& operator-=(const Radian<T>& val)
-        {
-            degrees_ -= val.AsDegrees();
-            return *this;
-        }
-
-        Degree<T>& operator*=(T val)
-        {
-            degrees_ *= val;
-            return *this;
-        }
-
-        Degree<T>& operator/=(T val)
-        {
-            degrees_ /= val;
-            return *this;
-        }
-
-        Degree<T>& operator=(T degree)
-        {
-            degrees_ = degree;
-            return *this;
-        }
-
-        Degree<T>& operator=(const Degree<T>& val)
-        {
-            degrees_ = val.degrees_;
-            return *this;
-        }
-
-        Degree& operator=(const Radian<T>& val)
-        {
-            degrees_ = val.AsRadians();
-            return *this;
-        }
-
-    private:
-
-        T degrees_;
-    };
-
-    template <typename T>
-    class Radian : public Angle <T>
+    QuarkDegree(const QuarkDegree<T>& val)
+        : degrees_(val.degrees_)
     {
-    public:
+    }
 
-        Radian()
-            : radians_(0)
-        {
-        }
+    QuarkDegree(const QuarkRadian<T>& val)
+        : degrees_(val.AsDegrees())
+    {
+    }
 
-        Radian(T radian)
-            : radians_(radian)
-        {
-        }
+    T AsRadians() const
+    {
+        return degrees_* static_cast<T>(0.0174532925);
+    }
 
-        Radian(const Degree<T>& val)
-            : radians_(val.AsRadians())
-        {
-        }
+    T AsDegrees() const
+    {
+        return degrees_;
+    }
 
-        Radian(const Radian<T>& val)
-            : radians_(val.radians_)
-        {
-        }
+    void Simplify()
+    {
+        degrees_ = degrees_ % T(360);
+    }
 
-        T AsRadians() const
-        {
-            return radians_;
-        }
+public:
 
-        T AsDegrees() const
-        {
-            return radians_ * static_cast<T>(57.2957795);
-        }
+    QuarkDegree<T> operator+(T degree) const
+    {
+        return QuarkDegree<T>(degrees_ + degree);
+    }
 
-    public:
+    QuarkDegree<T> operator+(const QuarkDegree<T>& val) const
+    {
+        return QuarkDegree<T>(degrees_ + val.degrees_());
+    }
 
-        Radian<T> operator+(T radian) const
-        {
-            return Radian<T>(radians_ + radian);
-        }
+    QuarkDegree<T> operator+(const QuarkRadian<T>& val) const
+    {
+        return QuarkDegree<T>(degrees_ + val.AsDegrees());
+    }
 
-        Radian<T> operator+(const Degree<T>& val) const
-        {
-            return Radian<T>(radians_ + val.AsRadians());
-        }
+    QuarkDegree<T> operator-(T degree) const
+    {
+        return QuarkDegree<T>(degrees_ - degree);
+    }
 
-        Radian<T> operator+(const Radian<T>& val) const
-        {
-            return Radian<T>(radians_ + val.radians_);
-        }
+    QuarkDegree<T> operator-(const QuarkDegree<T>& val) const
+    {
+        return QuarkDegree<T>(degrees_ - val.AsDegrees());
+    }
 
-        Radian<T> operator-(T radian) const
-        {
-            return Radian<T>(radians_ - radian);
-        }
+    QuarkDegree<T> operator-(const QuarkRadian<T>& val) const
+    {
+        return QuarkDegree<T>(degrees_ - val.AsDegrees());
+    }
 
-        Radian<T> operator-(const Degree<T>& val) const
-        {
-            return Radian<T>(radians_ - val.AsRadians());
-        }
+    QuarkDegree<T> operator*(T val) const
+    {
+        return QuarkDegree<T>(degrees_ * val);
+    }
 
-        Radian<T> operator-(const Radian<T>& val) const
-        {
-            return Radian(radians_ - val.AsRadians());
-        }
+    QuarkDegree<T> operator/(T val) const
+    {
+        return QuarkDegree<T>(degrees_ / val);
+    }
 
-        Radian<T> operator*(T val) const
-        {
-            return Radian<T>(radians_ * val);
-        }
+    QuarkDegree<T>& operator+=(T degree)
+    {
+        degrees_ += degree;
+        return *this;
+    }
 
-        Radian<T> operator/(T val) const
-        {
-            return Radian<T>(radians_ / val);
-        }
+    QuarkDegree<T>& operator+=(const QuarkDegree<T>& val)
+    {
+        degrees_ += val.degrees_;
+        return *this;
+    }
 
-        Radian<T>& operator+=(T radian)
-        {
-            radians_ += radian;
-            return *this;
-        }
+    QuarkDegree<T>& operator+=(const QuarkRadian<T>& val)
+    {
+        degrees_ += val.AsDegrees();
+        return *this;
+    }
 
-        Radian<T>& operator+=(const Degree<T>& val)
-        {
-            radians_ += val.AsRadians();
-            return *this;
-        }
+    QuarkDegree<T>& operator-=(T degree)
+    {
+        degrees_ -= degree;
+        return *this;
+    }
 
-        Radian<T>& operator+=(const Radian<T>& val)
-        {
-            radians_ += val.radians_;
-            return *this;
-        }
+    QuarkDegree<T>& operator-=(const QuarkDegree<T>& val)
+    {
+        degrees_ -= val.degrees_;
+        return *this;
+    }
 
-        Radian<T>& operator-=(T radian)
-        {
-            radians_ -= radian;
-            return *this;
-        }
+    QuarkDegree<T>& operator-=(const QuarkRadian<T>& val)
+    {
+        degrees_ -= val.AsDegrees();
+        return *this;
+    }
 
-        Radian<T>& operator-=(const Degree<T>& val)
-        {
-            radians_ -= val.AsRadians();
-            return *this;
-        }
+    QuarkDegree<T>& operator*=(T val)
+    {
+        degrees_ *= val;
+        return *this;
+    }
 
-        Radian<T>& operator-=(const Radian<T>& val)
-        {
-            radians_ -= val.radians_;
-            return *this;
-        }
+    QuarkDegree<T>& operator/=(T val)
+    {
+        degrees_ /= val;
+        return *this;
+    }
 
-        Radian<T>& operator*=(T val)
-        {
-            radians_ *= val;
-            return *this;
-        }
+    QuarkDegree<T>& operator=(T degree)
+    {
+        degrees_ = degree;
+        return *this;
+    }
 
-        Radian<T>& operator/=(T val)
-        {
-            radians_ /= val;
-            return *this;
-        }
+    QuarkDegree<T>& operator=(const QuarkDegree<T>& val)
+    {
+        degrees_ = val.degrees_;
+        return *this;
+    }
 
-        Radian<T>& operator=(T radian)
-        {
-            radians_ = radian;
-            return *this;
-        }
+    QuarkDegree& operator=(const QuarkRadian<T>& val)
+    {
+        degrees_ = val.AsRadians();
+        return *this;
+    }
 
-        Radian<T>& operator=(const Degree<T>& val)
-        {
-            radians_ = val.AsRadians();
-            return *this;
-        }
+private:
 
-        Radian<T>& operator=(const Radian<T>& val)
-        {
-            radians_ = val.radians_;
-            return *this;
-        }
+    T degrees_;
+};
 
-    private:
+template <typename T>
+class QuarkRadian : public QuarkAngle <T>
+{
+public:
 
-        T radians_;
-    };
+    QuarkRadian()
+        : radians_(0)
+    {
+    }
 
-    typedef Radian<float> RadianF;
-    typedef Radian<double> RadianD;
-    typedef Degree<float> DegreeF;
-    typedef Degree<double> DegreeD;
-}
+    QuarkRadian(T radian)
+        : radians_(radian)
+    {
+    }
+
+    QuarkRadian(const QuarkDegree<T>& val)
+        : radians_(val.AsRadians())
+    {
+    }
+
+    QuarkRadian(const QuarkRadian<T>& val)
+        : radians_(val.radians_)
+    {
+    }
+
+    T AsRadians() const
+    {
+        return radians_;
+    }
+
+    T AsDegrees() const
+    {
+        return radians_ * static_cast<T>(57.2957795);
+    }
+
+public:
+
+    QuarkRadian<T> operator+(T radian) const
+    {
+        return QuarkRadian<T>(radians_ + radian);
+    }
+
+    QuarkRadian<T> operator+(const QuarkDegree<T>& val) const
+    {
+        return QuarkRadian<T>(radians_ + val.AsRadians());
+    }
+
+    QuarkRadian<T> operator+(const QuarkRadian<T>& val) const
+    {
+        return QuarkRadian<T>(radians_ + val.radians_);
+    }
+
+    QuarkRadian<T> operator-(T radian) const
+    {
+        return QuarkRadian<T>(radians_ - radian);
+    }
+
+    QuarkRadian<T> operator-(const QuarkDegree<T>& val) const
+    {
+        return QuarkRadian<T>(radians_ - val.AsRadians());
+    }
+
+    QuarkRadian<T> operator-(const QuarkRadian<T>& val) const
+    {
+        return QuarkRadian(radians_ - val.AsRadians());
+    }
+
+    QuarkRadian<T> operator*(T val) const
+    {
+        return QuarkRadian<T>(radians_ * val);
+    }
+
+    QuarkRadian<T> operator/(T val) const
+    {
+        return QuarkRadian<T>(radians_ / val);
+    }
+
+    QuarkRadian<T>& operator+=(T radian)
+    {
+        radians_ += radian;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator+=(const QuarkDegree<T>& val)
+    {
+        radians_ += val.AsRadians();
+        return *this;
+    }
+
+    QuarkRadian<T>& operator+=(const QuarkRadian<T>& val)
+    {
+        radians_ += val.radians_;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator-=(T radian)
+    {
+        radians_ -= radian;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator-=(const QuarkDegree<T>& val)
+    {
+        radians_ -= val.AsRadians();
+        return *this;
+    }
+
+    QuarkRadian<T>& operator-=(const QuarkRadian<T>& val)
+    {
+        radians_ -= val.radians_;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator*=(T val)
+    {
+        radians_ *= val;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator/=(T val)
+    {
+        radians_ /= val;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator=(T radian)
+    {
+        radians_ = radian;
+        return *this;
+    }
+
+    QuarkRadian<T>& operator=(const QuarkDegree<T>& val)
+    {
+        radians_ = val.AsRadians();
+        return *this;
+    }
+
+    QuarkRadian<T>& operator=(const QuarkRadian<T>& val)
+    {
+        radians_ = val.radians_;
+        return *this;
+    }
+
+private:
+
+    T radians_;
+};
+
+typedef QuarkRadian<float> QuarkRadF;
+typedef QuarkRadian<double> QuarkRadD;
+typedef QuarkDegree<float> QuarkDegF;
+typedef QuarkDegree<double> QuarkDegD;
 
 #endif

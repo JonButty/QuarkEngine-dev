@@ -1,6 +1,6 @@
-#include "fileSystem.h"
+#include "stdafx.h"
 
-#define DATAFOLDER ".\data\"
+#define DATAFOLDER ".\\data\\"
 
 // TODO Implement file system to cache file paths
 namespace Util
@@ -14,5 +14,4 @@ namespace Util
     {
 
     }
-
 }

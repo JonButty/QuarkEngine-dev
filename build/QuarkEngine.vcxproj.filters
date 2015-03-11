@@ -32,7 +32,9 @@
     <ClCompile Include="..\src\common\stdafx.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\util\fileSystem.cpp" />
+    <ClCompile Include="..\src\util\fileSystem.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\stdafx.h">
