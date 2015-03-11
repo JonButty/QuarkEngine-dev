@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Vector">
+      <UniqueIdentifier>{45ef2761-3b88-4a23-97c6-73bffb288468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vector\Vector2">
+      <UniqueIdentifier>{c9aaf93b-577c-4d5a-b986-63b2b12a2fb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vector\Vector3">
+      <UniqueIdentifier>{c4db1670-8478-487b-b68d-38b53136e138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Angle">
+      <UniqueIdentifier>{a5d0b8a5-e990-4265-8f0c-408cafafdbdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{01cb4d79-374b-4d71-89c4-e410531c8e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Polar">
+      <UniqueIdentifier>{5c8db0c8-d9d9-49c2-99a3-b5b5eb0e6232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Spherical">
+      <UniqueIdentifier>{27016939-c6e3-4fbb-9a2c-dc21fb18c3ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Interpolation">
+      <UniqueIdentifier>{4d403f05-e20d-4911-b692-a2cc377954f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Matrix">
+      <UniqueIdentifier>{72cdd043-e10e-4e4d-816f-2940f61d640b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vector\Vector4">
+      <UniqueIdentifier>{79752519-245e-45f6-b7de-1f20a1180fed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vector\Vector4\Quaternion">
+      <UniqueIdentifier>{19b23dc5-ab9d-412c-a818-6c0403def747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{22dd2767-edaf-480f-9496-d8a6687d4cb2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\dllmain.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\inc\vector2.h">
+      <Filter>Source Files\Vector\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\inc\angle.h">
+      <Filter>Source Files\Angle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\inc\interpolate.h">
+      <Filter>Source Files\Interpolation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\stdafx.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\targetver.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\configMathDLL.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\cyclicNumGen.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\mathDef.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector2Native.h">
+      <Filter>Source Files\Vector\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector3.h">
+      <Filter>Source Files\Vector\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector3Native.h">
+      <Filter>Source Files\Vector\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\mathLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\polar.h">
+      <Filter>Source Files\Polar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\spherical.h">
+      <Filter>Source Files\Spherical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\matrix4.h">
+      <Filter>Source Files\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\matrix4Native.h">
+      <Filter>Source Files\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector4.h">
+      <Filter>Source Files\Vector\Vector4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector4Native.h">
+      <Filter>Source Files\Vector\Vector4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\quaternion.h">
+      <Filter>Source Files\Vector\Vector4\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\quaternionNative.h">
+      <Filter>Source Files\Vector\Vector4\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector2DirectXMath.h">
+      <Filter>Source Files\Vector\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector3DirectXMath.h">
+      <Filter>Source Files\Vector\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vector4DirectXMath.h">
+      <Filter>Source Files\Vector\Vector4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\quaternionDirectXMath.h">
+      <Filter>Source Files\Vector\Vector4\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\matrix4DirectXMath.h">
+      <Filter>Source Files\Matrix</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

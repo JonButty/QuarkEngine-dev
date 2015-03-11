@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test_D|Win32">
+      <Configuration>Test_D</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test_R|Win32">
+      <Configuration>Test_R</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\inc\debugAABB.h" />
+    <ClCompile Include="..\inc\debugShapeFactory.h" />
+    <ClCompile Include="..\src\cameraDX.cpp" />
+    <ClCompile Include="..\src\cameraFactory.cpp" />
+    <ClCompile Include="..\src\cameraManager.cpp" />
+    <ClCompile Include="..\src\color.cpp" />
+    <ClCompile Include="..\src\debugAABBDX10.cpp" />
+    <ClCompile Include="..\src\debugEllipseDX10.cpp" />
+    <ClCompile Include="..\src\debugOBBDX10.cpp" />
+    <ClCompile Include="..\src\debugShapeBuilder.cpp" />
+    <ClCompile Include="..\src\debugShapeDX10.cpp" />
+    <ClCompile Include="..\src\debugShapeFactory.cpp" />
+    <ClCompile Include="..\src\debugSphereDX10.cpp" />
+    <ClCompile Include="..\src\dllmain.cpp" />
+    <ClCompile Include="..\src\gfxAPIDX10.cpp" />
+    <ClCompile Include="..\src\gfxAPIDX11.cpp" />
+    <ClCompile Include="..\src\Graphics.cpp" />
+    <ClCompile Include="..\src\light.cpp" />
+    <ClCompile Include="..\src\lightPoint.cpp" />
+    <ClCompile Include="..\src\lightManager.cpp" />
+    <ClCompile Include="..\src\meshDX10.cpp" />
+    <ClCompile Include="..\src\meshDX11.cpp" />
+    <ClCompile Include="..\src\meshBuilder.cpp" />
+    <ClCompile Include="..\src\meshBuilderOBJ.cpp" />
+    <ClCompile Include="..\src\meshManager.cpp" />
+    <ClCompile Include="..\src\pivotCamera.cpp" />
+    <ClCompile Include="..\src\shaderBoundaryDX10.cpp" />
+    <ClCompile Include="..\src\shaderDefault.cpp" />
+    <ClCompile Include="..\src\shaderDX10.cpp" />
+    <ClCompile Include="..\src\shaderDX11.cpp" />
+    <ClCompile Include="..\src\shaderManager.cpp" />
+    <ClCompile Include="..\src\shaderNormals.cpp" />
+    <ClCompile Include="..\src\shaderPhongDX10.cpp" />
+    <ClCompile Include="..\src\shaderPhongDX11.cpp" />
+    <ClCompile Include="..\src\stdafx.cpp" />
+    <ClCompile Include="..\src\gfxSystemDX.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\debugAABBDX10.h" />
+    <ClInclude Include="..\inc\debugEllipse.h" />
+    <ClInclude Include="..\inc\debugEllipseDX10.h" />
+    <ClInclude Include="..\inc\debugOBB.h" />
+    <ClInclude Include="..\inc\debugOBBDX10.h" />
+    <ClInclude Include="..\inc\debugShape.h" />
+    <ClInclude Include="..\inc\debugShapeBuilder.h" />
+    <ClInclude Include="..\inc\debugShapeDX10.h" />
+    <ClInclude Include="..\inc\debugShapeTypes.h" />
+    <ClInclude Include="..\inc\debugSphere.h" />
+    <ClInclude Include="..\inc\gfxAPIDX10.h" />
+    <ClInclude Include="..\inc\camera.h" />
+    <ClInclude Include="..\inc\cameraDX.h" />
+    <ClInclude Include="..\inc\cameraFactory.h" />
+    <ClInclude Include="..\inc\cameraManager.h" />
+    <ClInclude Include="..\inc\cameraTypes.h" />
+    <ClInclude Include="..\inc\color.h" />
+    <ClInclude Include="..\inc\configGraphicsDLL.h" />
+    <ClInclude Include="..\inc\face.h" />
+    <ClInclude Include="..\inc\gfxAPI.h" />
+    <ClInclude Include="..\inc\gfxAPIDX11.h" />
+    <ClInclude Include="..\inc\gfxLogger.h" />
+    <ClInclude Include="..\inc\gfxSystem.h" />
+    <ClInclude Include="..\inc\halfEdge.h" />
+    <ClInclude Include="..\inc\light.h" />
+    <ClInclude Include="..\inc\lightPoint.h" />
+    <ClInclude Include="..\inc\lightFactory.h" />
+    <ClInclude Include="..\inc\lightManager.h" />
+    <ClInclude Include="..\inc\lightTypes.h" />
+    <ClInclude Include="..\inc\mesh.h" />
+    <ClInclude Include="..\inc\meshDX10.h" />
+    <ClInclude Include="..\inc\meshDX11.h" />
+    <ClInclude Include="..\inc\meshBuilder.h" />
+    <ClInclude Include="..\inc\meshBuilderOBJ.h" />
+    <ClInclude Include="..\inc\meshManager.h" />
+    <ClInclude Include="..\inc\meshTypes.h" />
+    <ClInclude Include="..\inc\shaderBoundary.h" />
+    <ClInclude Include="..\inc\shaderBoundaryDX10.h" />
+    <ClInclude Include="..\inc\shaderDX10.h" />
+    <ClInclude Include="..\inc\shaderNormals.h" />
+    <ClInclude Include="..\inc\shaderPhong.h" />
+    <ClInclude Include="..\inc\pivotCamera.h" />
+    <ClInclude Include="..\inc\shader.h" />
+    <ClInclude Include="..\inc\shaderDefault.h" />
+    <ClInclude Include="..\inc\shaderDX11.h" />
+    <ClInclude Include="..\inc\shaderFactory.h" />
+    <ClInclude Include="..\inc\shaderManager.h" />
+    <ClInclude Include="..\inc\shaderPhongDX10.h" />
+    <ClInclude Include="..\inc\shaderPhongDX11.h" />
+    <ClInclude Include="..\inc\shaderTable.h" />
+    <ClInclude Include="..\inc\shaderTableDX10.h" />
+    <ClInclude Include="..\inc\shaderTableDX11.h" />
+    <ClInclude Include="..\inc\shaderTypes.h" />
+    <ClInclude Include="..\inc\stdafx.h" />
+    <ClInclude Include="..\inc\gfxSystemDX.h" />
+    <ClInclude Include="..\inc\targetver.h" />
+    <ClInclude Include="..\inc\vertex.h" />
+    <ClInclude Include="..\inc\vertexLayout.h" />
+    <ClInclude Include="..\inc\vertexLayoutDX11.h" />
+    <ClInclude Include="..\inc\vertexLayoutDX10.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\inc\debugSphereDX10.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{46BCFEB1-B9A6-4F6C-846C-D67871B40CCC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Graphics</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_D|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_R|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test_D|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test_R|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(Configuration)\</IntDir>
+    <IncludePath>DXSDK_DIR\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>DXSDK_DIR\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_D|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(Configuration)\</IntDir>
+    <IncludePath>DXSDK_DIR\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>DXSDK_DIR\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(Configuration)\</IntDir>
+    <IncludePath>DXSDK_DIR\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>DXSDK_DIR\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_R|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(Configuration)\</IntDir>
+    <IncludePath>DXSDK_DIR\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>DXSDK_DIR\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GRAPHICS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\inc\;..\..\Shared\inc\;..\..\Math\inc\;..\..\Utilities\inc\;..\..\Physics\inc\;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4251;4005;4505;4201;</DisableSpecificWarnings>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\Math\bin\$(Configuration)\;..\..\Utilities\bin\$(Configuration)\;..\..\Physics\bin\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Physics.lib;Utilities.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>..\..\BuildScripts\buildDep.bat $(Configuration) </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test_D|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GRAPHICS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\inc\;..\..\Shared\inc\;..\..\Math\inc\;..\..\Utilities\inc\;..\..\Physics\inc\;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4251;4005;4505;4201;</DisableSpecificWarnings>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\Math\bin\$(Configuration)\;..\..\Utilities\bin\$(Configuration)\;..\..\Physics\bin\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Physics.lib;Utilities.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GRAPHICS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\inc\;..\..\Shared\inc\;..\..\Math\inc\;..\..\Utilities\inc\;..\..\Physics\inc\;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4251;4005;4505;4201;</DisableSpecificWarnings>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\Math\bin\$(Configuration)\;..\..\Utilities\bin\$(Configuration)\;..\..\Physics\bin\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Physics.lib;Utilities.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>..\..\BuildScripts\buildDep.bat $(Configuration) </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test_R|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GRAPHICS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\inc\;..\..\Shared\inc\;..\..\Math\inc\;..\..\Utilities\inc\;..\..\Physics\inc\;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4251;4005;4505;4201;</DisableSpecificWarnings>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\Math\bin\$(Configuration)\;..\..\Utilities\bin\$(Configuration)\;..\..\Physics\bin\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Physics.lib;Utilities.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{1373eb00-acff-465f-aac3-d6f32e5d8292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Singleton">
+      <UniqueIdentifier>{58fecd8b-067d-494b-acec-449d224172e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OS">
+      <UniqueIdentifier>{7a51577c-f2f0-46e2-b6cf-af1d46200b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{494c8436-7482-4d19-a2c2-cd1eb1704f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Console">
+      <UniqueIdentifier>{35eddc14-d0ff-4577-88fe-07a85f89e0a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input\Device">
+      <UniqueIdentifier>{5d0dbcd4-fab1-4d32-8d19-666f0cc46444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pool">
+      <UniqueIdentifier>{6e69af1e-7849-457b-829c-23bc7b5570f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{f8a4072e-bd68-4998-ba9b-cbd829def78a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factory">
+      <UniqueIdentifier>{9b864f4e-12c2-427f-8839-8a4d5a358aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input\Manager">
+      <UniqueIdentifier>{4712ed20-cace-44f1-bf65-7b494fadbe85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input\Factory">
+      <UniqueIdentifier>{729fa0c5-d365-4a9f-ac21-513c19309448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileIO">
+      <UniqueIdentifier>{33299445-a05d-4b9a-bfeb-5a5c366b49e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Delegate">
+      <UniqueIdentifier>{e746798d-bee9-40b6-9b55-0cad1a3967a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\Logger">
+      <UniqueIdentifier>{4826e49b-85ef-4f2c-9020-9cb3bff49f7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\Logger\Base">
+      <UniqueIdentifier>{69491540-9b92-4fed-9bd5-026a1597488c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\Logger\File">
+      <UniqueIdentifier>{581f82ff-1a5a-47a0-aa73-d7a69aeebfdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\Logger\File\Base">
+      <UniqueIdentifier>{8d96c9ed-5d35-496c-bc23-15431aae7083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\Logger\Console">
+      <UniqueIdentifier>{4b48c24d-8ac8-47eb-8b20-484b8a4d4433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\LogManager">
+      <UniqueIdentifier>{5db34c8f-979e-49c0-ad62-836e396f46de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{b752e1a6-f634-4374-b048-1286f2554873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input\Device\Keyboard">
+      <UniqueIdentifier>{a7ee9b7e-7533-48ad-82f3-4f44024d1fda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input\Device\Mouse">
+      <UniqueIdentifier>{e152b827-09f8-4c3b-9c8a-c034b4d65c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input\Device\Base">
+      <UniqueIdentifier>{06f8e488-1e1b-453d-80af-cfcc94cab3b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Utilities.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dllmain.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osW.cpp">
+      <Filter>Source Files\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\consoleW.cpp">
+      <Filter>Source Files\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fileInput.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\delegate.cpp">
+      <Filter>Source Files\Delegate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\logger.cpp">
+      <Filter>Source Files\Debug\Logger\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fileLogger.cpp">
+      <Filter>Source Files\Debug\Logger\File\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugFileLogger.cpp">
+      <Filter>Source Files\Debug\Logger\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\consoleLogger.cpp">
+      <Filter>Source Files\Debug\Logger\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\logManager.cpp">
+      <Filter>Source Files\Debug\LogManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utilSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\inputDeviceW.cpp">
+      <Filter>Source Files\Input\Device\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\inputDeviceManagerW.cpp">
+      <Filter>Source Files\Input\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\keyboardW.cpp">
+      <Filter>Source Files\Input\Device\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mouseW.cpp">
+      <Filter>Source Files\Input\Device\Mouse</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\singleton.h">
+      <Filter>Source Files\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\stdafx.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\targetver.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\configUtilitiesDLL.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\search.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\os.h">
+      <Filter>Source Files\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\osW.h">
+      <Filter>Source Files\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\console.h">
+      <Filter>Source Files\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\consoleW.h">
+      <Filter>Source Files\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\inputDeviceTypes.h">
+      <Filter>Source Files\Input\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\pool.h">
+      <Filter>Source Files\Pool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\utilAssert.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\factory.h">
+      <Filter>Source Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\inputDeviceFactory.h">
+      <Filter>Source Files\Input\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\constructorList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\fileInput.h">
+      <Filter>Source Files\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\fileHandle.h">
+      <Filter>Source Files\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\delegate.h">
+      <Filter>Source Files\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\logger.h">
+      <Filter>Source Files\Debug\Logger\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\fileLogger.h">
+      <Filter>Source Files\Debug\Logger\File\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugFileLogger.h">
+      <Filter>Source Files\Debug\Logger\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\consoleLogger.h">
+      <Filter>Source Files\Debug\Logger\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\logManager.h">
+      <Filter>Source Files\Debug\LogManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\loggerTypes.h">
+      <Filter>Source Files\Debug\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\utilSystem.h">
+      <Filter>Source Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\utilLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\inputDevice.h">
+      <Filter>Source Files\Input\Device\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\inputDeviceW.h">
+      <Filter>Source Files\Input\Device\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\binaryTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\kTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\inputDeviceManager.h">
+      <Filter>Source Files\Input\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\inputDeviceManagerW.h">
+      <Filter>Source Files\Input\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\keyboard.h">
+      <Filter>Source Files\Input\Device\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\keyboardW.h">
+      <Filter>Source Files\Input\Device\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\mouse.h">
+      <Filter>Source Files\Input\Device\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\mouseW.h">
+      <Filter>Source Files\Input\Device\Mouse</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ReadMe.txt" />
+  </ItemGroup>
+</Project>
