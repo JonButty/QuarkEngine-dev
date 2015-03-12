@@ -1,0 +1,5 @@
+LUA:
+http://luabinaries.sourceforge.net/
+
+Doxygen:
+http://www.stack.nl/~dimitri/doxygen/download.html

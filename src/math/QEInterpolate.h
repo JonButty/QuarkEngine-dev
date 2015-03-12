@@ -1,16 +1,16 @@
 /********************************************************************
 	created:	2015/01/27
-	filename: 	interpolate.h
+	filename: 	QEInterpolate.h
 	author:		Jonathan Butt
 	purpose:	
 *********************************************************************/
 
 // TODO integrate scripting into interpolation
-#ifndef INTERPOLATE_H
-#define INTERPOLATE_H
+#ifndef QEINTERPOLATE_H
+#define QEINTERPOLATE_H
 
 template <typename T>
-class Interpolation
+class QEInterpolation
 {
 public:
     static T Linear(T intp)

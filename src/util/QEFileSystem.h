@@ -1,25 +1,22 @@
 /********************************************************************
 	created:	2015/01/27
-	filename: 	fileSystem.h
+	filename: 	QEFileSystem.h
 	author:		Jonathan Butt
 	purpose:	An interface that allows users to manipulate files without
                 needing to know the actual path.
 *********************************************************************/
 
-#ifndef FILESYSTEM_H
-#define FILESYSTEM_H
+#ifndef QEFILESYSTEM_H
+#define QEFILESYSTEM_H
 
-#include "singleton.h"
+#include "QESingleton.h"
 
-namespace Util
+class QEFileSystem : public QESingleton<QEFileSystem>
 {
-    class FileSystem : public Singleton<FileSystem>
-    {
-    public:
-        FileSystem();
-    private:
-        void generateTree_();
-    };
-}
+public:
+    QEFileSystem();
+private:
+    void generateTree_();
+};
 
 #endif

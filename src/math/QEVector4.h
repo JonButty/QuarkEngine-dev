@@ -1,27 +1,27 @@
 /********************************************************************
 	created:	2015/01/27
-	filename: 	vector4.h
+	filename: 	QEVector4.h
 	author:		Jonathan Butt
 	purpose:	
 *********************************************************************/
 
-#ifndef VECTOR4_H
-#define VECTOR4_H
+#ifndef QEVECTOR4_H
+#define QEVECTOR4_H
 
 template <typename T>
-class QuarkVector4
+class QEVector4
 {
 public:
     
-    static const QuarkVector4<T> Zero;
-    static const QuarkVector4<T> UnitX;
-    static const QuarkVector4<T> UnitY;
-    static const QuarkVector4<T> UnitZ;
-    static const QuarkVector4<T> UnitW;
+    static const QEVector4<T> Zero;
+    static const QEVector4<T> UnitX;
+    static const QEVector4<T> UnitY;
+    static const QEVector4<T> UnitZ;
+    static const QEVector4<T> UnitW;
     
 public:
 
-    QuarkVector4()
+    QEVector4()
         :   x_(0),
             y_(0),
             z_(0),
@@ -29,7 +29,7 @@ public:
     {
     }
 
-    QuarkVector4(T x,
+    QEVector4(T x,
             T y,
             T z,
             T w)
@@ -40,7 +40,7 @@ public:
     {
     }
 
-    QuarkVector4(const QuarkVector4<T>& val) 
+    QEVector4(const QEVector4<T>& val) 
         :   x_(val.x_),
             y_(val.y_),
             z_(val.z_),
@@ -48,17 +48,17 @@ public:
     {
     }
 
-    QuarkVector4<T> ProjectOnto(const QuarkVector4<T>& val) const
+    QEVector4<T> ProjectOnto(const QEVector4<T>& val) const
     {
         return (Dot(val) / val.SquareLength()) * val;
     }
 
-    QuarkVector4<T> ReflectAbout(const QuarkVector4<T>& val) const
+    QEVector4<T> ReflectAbout(const QEVector4<T>& val) const
     {
         return *this - 2 * ProjectOnto(val.Normalized());
     }
 
-    T Dot(const QuarkVector4<T>& val) const
+    T Dot(const QEVector4<T>& val) const
     {
         return (x_ * val.x_) + (y_ * val.y_) + (z_ * val.z_) + (w_ * val.w_);
     }
@@ -68,7 +68,7 @@ public:
         *this /= Length();
     }
 
-    QuarkVector4<T> Normalized() const
+    QEVector4<T> Normalized() const
     {
         return *this / Length();
     }
@@ -85,7 +85,7 @@ public:
 
 public:
 
-    QuarkVector4<T>& operator=(const QuarkVector4<T>& val)
+    QEVector4<T>& operator=(const QEVector4<T>& val)
     {
         x_ = val.x_;
         y_ = val.y_;
@@ -94,32 +94,32 @@ public:
         return *this;
     }
 
-    QuarkVector4<T> operator+(const QuarkVector4<T>& val) const
+    QEVector4<T> operator+(const QEVector4<T>& val) const
     {
-        return QuarkVector4(x_ + val.x_, y_ + val.y_, z_ + val.z_, w_ + val.w_);
+        return QEVector4(x_ + val.x_, y_ + val.y_, z_ + val.z_, w_ + val.w_);
     }
 
-    QuarkVector4<T> operator-(const QuarkVector4<T>& val) const
+    QEVector4<T> operator-(const QEVector4<T>& val) const
     {
-        return QuarkVector4(x_ - val.x_, y_ - val.y_, z_ - val.z_, w_ - val.w_);
+        return QEVector4(x_ - val.x_, y_ - val.y_, z_ - val.z_, w_ - val.w_);
     }
 
-    QuarkVector4<T> operator-() const
+    QEVector4<T> operator-() const
     {
-        return QuarkVector4(-x_, -y_, -z_, -w_);
+        return QEVector4(-x_, -y_, -z_, -w_);
     }
 
-    QuarkVector4<T> operator*(T val) const
+    QEVector4<T> operator*(T val) const
     {
-        return QuarkVector4(x_ * val, y_ * val, z_ * val, w_ * val);
+        return QEVector4(x_ * val, y_ * val, z_ * val, w_ * val);
     }
 
-    QuarkVector4<T> operator/(T val) const
+    QEVector4<T> operator/(T val) const
     {
-        return QuarkVector4(x_ / val, y_ / val, z_ / val, w_ / val);
+        return QEVector4(x_ / val, y_ / val, z_ / val, w_ / val);
     }
 
-    QuarkVector4<T>& operator+=(const QuarkVector4<T>& val)
+    QEVector4<T>& operator+=(const QEVector4<T>& val)
     {
         x_ += val.x_;
         y_ += val.y_;
@@ -128,7 +128,7 @@ public:
         return *this;
     }
 
-    QuarkVector4<T>& operator-=(const QuarkVector4<T>& val)
+    QEVector4<T>& operator-=(const QEVector4<T>& val)
     {
         x_ -= val.x_;
         y_ -= val.y_;
@@ -137,7 +137,7 @@ public:
         return *this;
     }
 
-    QuarkVector4<T>& operator*=(T val)
+    QEVector4<T>& operator*=(T val)
     {
         x_ *= val;
         y_ *= val;
@@ -146,7 +146,7 @@ public:
         return *this;
     }
 
-    QuarkVector4<T>& operator/=(T val)
+    QEVector4<T>& operator/=(T val)
     {
         x_ /= val;
         y_ /= val;
@@ -226,32 +226,32 @@ protected:
 };
 
 // Int
-typedef QuarkVector4<int> QuarkVec4I;
-const QuarkVec4I QuarkVec4I::Zero(0,0,0,0);
-const QuarkVec4I QuarkVec4I::UnitX(1,0,0,0);
-const QuarkVec4I QuarkVec4I::UnitY(0,1,0,0);
-const QuarkVec4I QuarkVec4I::UnitZ(0,0,1,0);
-const QuarkVec4I QuarkVec4I::UnitW(0,0,0,1);
+typedef QEVector4<int> QEVec4I;
+const QEVec4I QEVec4I::Zero(0,0,0,0);
+const QEVec4I QEVec4I::UnitX(1,0,0,0);
+const QEVec4I QEVec4I::UnitY(0,1,0,0);
+const QEVec4I QEVec4I::UnitZ(0,0,1,0);
+const QEVec4I QEVec4I::UnitW(0,0,0,1);
 
 // Float
-typedef QuarkVector4<float> QuarkVec4F;
-const QuarkVec4F QuarkVec4F::Zero(0,0,0,0);
-const QuarkVec4F QuarkVec4F::UnitX(1,0,0,0);
-const QuarkVec4F QuarkVec4F::UnitY(0,1,0,0);
-const QuarkVec4F QuarkVec4F::UnitZ(0,0,1,0);
-const QuarkVec4F QuarkVec4F::UnitW(0,0,0,1);
+typedef QEVector4<float> QEVec4F;
+const QEVec4F QEVec4F::Zero(0,0,0,0);
+const QEVec4F QEVec4F::UnitX(1,0,0,0);
+const QEVec4F QEVec4F::UnitY(0,1,0,0);
+const QEVec4F QEVec4F::UnitZ(0,0,1,0);
+const QEVec4F QEVec4F::UnitW(0,0,0,1);
 
 // Double
-typedef QuarkVector4<double> QuarkVec4D;
-const QuarkVec4D QuarkVec4D::Zero(0,0,0,0);
-const QuarkVec4D QuarkVec4D::UnitX(1,0,0,0);
-const QuarkVec4D QuarkVec4D::UnitY(0,1,0,0);
-const QuarkVec4D QuarkVec4D::UnitZ(0,0,1,0);
-const QuarkVec4D QuarkVec4D::UnitW(0,0,0,1);
+typedef QEVector4<double> QEVec4D;
+const QEVec4D QEVec4D::Zero(0,0,0,0);
+const QEVec4D QEVec4D::UnitX(1,0,0,0);
+const QEVec4D QEVec4D::UnitY(0,1,0,0);
+const QEVec4D QEVec4D::UnitZ(0,0,1,0);
+const QEVec4D QEVec4D::UnitW(0,0,0,1);
 
 template <typename T>
-QuarkVector4<T> operator*(T a,
-                           const QuarkVector4<T>& b)
+QEVector4<T> operator*(T a,
+                       const QEVector4<T>& b)
 {
     return b * a;
 }

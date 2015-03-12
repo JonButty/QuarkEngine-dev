@@ -7,7 +7,7 @@
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 
-#include "util/singleton.h"
-#include "util/fileSystem.h"
+#include "util/QESingleton.h"
+#include "util/QEFileSystem.h"
 
 // TODO: reference additional headers your program requires here

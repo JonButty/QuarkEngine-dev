@@ -1,28 +1,29 @@
 /********************************************************************
 	created:	2015/01/27
-	filename: 	quaternion.h
+	filename: 	QEQuaternion.h
 	author:		Jonathan Butt
 	purpose:	
 *********************************************************************/
 
-#ifndef QUATERNION_H
-#define QUATERNION_H
+#ifndef QEQUATERNION_H
+#define QEQUATERNION_H
 
 template <typename T>
-class QuarkQuaternion : public Vector4 <T>
+class QEQuaternion : public Vector4 <T>
 {
 public:
 
-    static const QuarkQuaternion<T> Identity;
+    static const QEQuaternion<T> Identity;
     
 public:
+
     // x,y,z represent i,j,k basis vectors and w is the real part
-    QuarkQuaternion()
+    QEQuaternion()
         : Vector4<T>(Identity)
     {
     }
 
-    QuarkQuaternion(T x,
+    QEQuaternion(T x,
                 T y,
                 T z, 
                 T w)
@@ -30,28 +31,28 @@ public:
     {
     }
 
-    QuarkQuaternion(const Vector4<T>& val)
+    QEQuaternion(const Vector4<T>& val)
         : Vector4<T>(val)
     {
     }
 
-    QuarkQuaternion(T real, 
+    QEQuaternion(T real, 
                 const Vector3<T>& val)
                 : Vector4<T>(val.X(), val.Y(), val.Z(), real)
     {
     }
 
-    QuarkQuaternion<T> Conjugate() const
+    QEQuaternion<T> Conjugate() const
     {
-        return QuarkQuaternion<T>(-x_, -y_, -z_, w_);
+        return QEQuaternion<T>(-x_, -y_, -z_, w_);
     }
 
-    QuarkQuaternion<T> Inverse() const
+    QEQuaternion<T> Inverse() const
     {
         return Conjugate() / SquareLength();
     }
 
-    static Matrix4<T> Convert(const QuarkQuaternion<T>& quat)
+    static Matrix4<T> Convert(const QEQuaternion<T>& quat)
     {
         Radian<T> angle;
         Vector3<T> axis;
@@ -64,7 +65,7 @@ public:
         return rotation;
     }
 
-    static void Convert(const QuarkQuaternion<T>& quat,
+    static void Convert(const QEQuaternion<T>& quat,
                         Radian<T>& angle,
                         Vector3<T>& axis)
     {
@@ -81,39 +82,39 @@ public:
         }
     }
 
-    static QuarkQuaternion<T> Convert(const Radian<T>& angle,
+    static QEQuaternion<T> Convert(const Radian<T>& angle,
                                     const Vector3<T>& axis)
     {
         if(std::abs(angle.AsRadians()) <= Math::EPSILON_DBL)
-            return QuarkQuaternion<T>::Identity;
+            return QEQuaternion<T>::Identity;
         else
         {
             T theta = angle.AsRadians() * T(0.5);
             T sinHalfTheta = std::sin(theta);
             T cosHalfTheta = std::cos(theta);
 
-            return QuarkQuaternion<T>(cosHalfTheta,sinHalfTheta * axis);
+            return QEQuaternion<T>(cosHalfTheta,sinHalfTheta * axis);
         }
     }
 
     // Used for Shoemake interpolation
-    static QuarkQuaternion<T> Double(const QuarkQuaternion<T>& p0,
-                                const QuarkQuaternion<T>& p1)
+    static QEQuaternion<T> Double(const QEQuaternion<T>& p0,
+                                const QEQuaternion<T>& p1)
     {
         return T(2) * p0.Dot(p1) * p1 - p0;
     }
 
     // Used for Shoemake interpolation
-    static QuarkQuaternion<T> Bisect(const QuarkQuaternion<T>& p0,
-                                const QuarkQuaternion<T>& p1)
+    static QEQuaternion<T> Bisect(const QEQuaternion<T>& p0,
+                                const QEQuaternion<T>& p1)
     {
-        QuarkQuaternion<T> ret(p0 + p1);
+        QEQuaternion<T> ret(p0 + p1);
         return ret.Normalized();
     }
 
     // Assumes that quaternions are unit length
-    static QuarkQuaternion<T> Slerp(const QuarkQuaternion<T>& p0,
-                                const QuarkQuaternion<T>& p1,
+    static QEQuaternion<T> Slerp(const QEQuaternion<T>& p0,
+                                const QEQuaternion<T>& p1,
                                 T t)
     {
         if(std::abs(t) <= Math::EPSILON_DBL)
@@ -127,7 +128,7 @@ public:
         // If angle is tiny, lerp
         if((T(1) - cosTheta) <= Math::EPSILON_DBL)
         {
-            return QuarkQuaternion<T>(Interpolate(p0.X(),p1.X(),t,Interpolation<T>::Linear),
+            return QEQuaternion<T>(Interpolate(p0.X(),p1.X(),t,Interpolation<T>::Linear),
                                     Interpolate(p0.Y(),p1.Y(),t,Interpolation<T>::Linear),
                                     Interpolate(p0.Z(),p1.Z(),t,Interpolation<T>::Linear),
                                     Interpolate(p0.W(),p1.W(),t,Interpolation<T>::Linear));
@@ -139,47 +140,47 @@ public:
         return a * p0 + b * p1;
     }
 
-    static QuarkQuaternion<T> QuadSlerp(const QuarkQuaternion<T>& p0,
-                                    const QuarkQuaternion<T>& p1,
-                                    const QuarkQuaternion<T>& p2,
+    static QEQuaternion<T> QuadSlerp(const QEQuaternion<T>& p0,
+                                    const QEQuaternion<T>& p1,
+                                    const QEQuaternion<T>& p2,
                                     T t)
     {
         return Slerp(Slerp(p0,p1,t),Slerp(p1,p2,t),t);
     }
 
-    static QuarkQuaternion<T> CubicSlerp(const QuarkQuaternion<T>& p0,
-                                    const QuarkQuaternion<T>& p1,
-                                    const QuarkQuaternion<T>& p2,
-                                    const QuarkQuaternion<T>& p3,
+    static QEQuaternion<T> CubicSlerp(const QEQuaternion<T>& p0,
+                                    const QEQuaternion<T>& p1,
+                                    const QEQuaternion<T>& p2,
+                                    const QEQuaternion<T>& p3,
                                     T t)
     {
-        Math::QuarkQuatD p1p2(Math::QuarkQuatD::Slerp(p1,p2,t));
+        Math::QEQuatD p1p2(Math::QEQuatD::Slerp(p1,p2,t));
         return Slerp(Slerp(Slerp(p0,p1,t),p1p2,t),Slerp(p1p2,Slerp(p2,p3,t),t),t);
     }
 
-    static void SquadSetup(QuarkQuaternion<T>& s,
-                            const QuarkQuaternion<T>& q0,
-                            const QuarkQuaternion<T>& q1,
-                            const QuarkQuaternion<T>& q2)
+    static void SquadSetup(QEQuaternion<T>& s,
+                            const QEQuaternion<T>& q0,
+                            const QEQuaternion<T>& q1,
+                            const QEQuaternion<T>& q2)
     {
-        QuarkQuaternion<T> a(Log(q1.Inverse() * q2));
-        QuarkQuaternion<T> b(Log(q1.Inverse() * q0));
+        QEQuaternion<T> a(Log(q1.Inverse() * q2));
+        QEQuaternion<T> b(Log(q1.Inverse() * q0));
 
         s = q1 * Exp(T(-0.25) * (a + b));
     }
 
-    static QuarkQuaternion<T> Squad(const QuarkQuaternion<T>& q0,
-                                const QuarkQuaternion<T>& q1,
-                                const QuarkQuaternion<T>& s0,
-                                const QuarkQuaternion<T>& s1,
+    static QEQuaternion<T> Squad(const QEQuaternion<T>& q0,
+                                const QEQuaternion<T>& q1,
+                                const QEQuaternion<T>& s0,
+                                const QEQuaternion<T>& s1,
                                 T t)
     {
         return Slerp(Slerp(q0,q1,t),Slerp(s0,s1,t),T(2) * t * (T(1) - t));
     }
 
-    static QuarkQuaternion<T> Log(const QuarkQuaternion<T>& val)
+    static QEQuaternion<T> Log(const QEQuaternion<T>& val)
     {
-        QuarkQuaternion<T> quat(0,val.Imaginary());
+        QEQuaternion<T> quat(0,val.Imaginary());
         T theta = std::acos(val.W());
         T sinTheta = std::sin(theta);
 
@@ -191,10 +192,10 @@ public:
         return quat;
     }
 
-    static QuarkQuaternion<T> Exp(const QuarkQuaternion<T>& val)
+    static QEQuaternion<T> Exp(const QEQuaternion<T>& val)
     {
         T angle = val.Length();
-        QuarkQuaternion<T> quat(0,val.Imaginary());
+        QEQuaternion<T> quat(0,val.Imaginary());
 
         if(abs(angle) > Math::EPSILON_DBL)
         {
@@ -231,43 +232,43 @@ public:
 
 public:
 
-    QuarkQuaternion<T> operator*(const QuarkQuaternion<T>& val) const
+    QEQuaternion<T> operator*(const QEQuaternion<T>& val) const
     {
-        return QuarkQuaternion<T>((w_ * val.x_) + (x_ * val.w_) + (y_ * val.z_) - (z_ * val.y_),
+        return QEQuaternion<T>((w_ * val.x_) + (x_ * val.w_) + (y_ * val.z_) - (z_ * val.y_),
                                 (w_ * val.y_) - (x_ * val.z_) + (y_ * val.w_) + (z_ * val.x_),
                                 (w_ * val.z_) + (x_ * val.y_) - (y_ * val.x_) + (z_ * val.w_),
                                 (w_ * val.w_) - (x_ * val.x_) - (y_ * val.y_) - (z_ * val.z_));
     }
 
-    QuarkQuaternion<T> operator*(T val) const
+    QEQuaternion<T> operator*(T val) const
     {
-        return QuarkQuaternion<T>(x_ * val,
+        return QEQuaternion<T>(x_ * val,
                                 y_ * val,
                                 z_ * val,
                                 w_ * val);
     }
 
-    QuarkQuaternion<T> operator/(T val) const
+    QEQuaternion<T> operator/(T val) const
     {
-        return QuarkQuaternion<T>(x_ / val,
+        return QEQuaternion<T>(x_ / val,
                                 y_ / val,
                                 z_ / val,
                                 w_ / val);
     }
 
-    QuarkQuaternion<T>& operator*=(const QuarkQuaternion<T>& val)
+    QEQuaternion<T>& operator*=(const QEQuaternion<T>& val)
     {
         *this = *this * val;
         return *this;
     }
 
-    QuarkQuaternion<T>& operator*=(T val)
+    QEQuaternion<T>& operator*=(T val)
     {
         *this = *this * val;
         return *this;
     }
 
-    QuarkQuaternion<T>& operator/=(T val)
+    QEQuaternion<T>& operator/=(T val)
     {
         *this = *this / val;
         return *this;
@@ -275,11 +276,11 @@ public:
 };
 
 // Float
-typedef QuarkQuaternion<float> QuarkQuatF;
-const QuarkQuatF QuarkQuatF::Identity(0,0,0,1);
+typedef QEQuaternion<float> QEQuatF;
+const QEQuatF QEQuatF::Identity(0,0,0,1);
 
 // Double
-typedef QuarkQuaternion<double> QuarkQuatD;
-const QuarkQuatD QuarkQuatD::Identity(0,0,0,1);
+typedef QEQuaternion<double> QEQuatD;
+const QEQuatD QEQuatD::Identity(0,0,0,1);
 
 #endif

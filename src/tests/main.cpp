@@ -1,4 +1,5 @@
 #include "mathTest.h"
+#include "util/luaTest.h"
 
 #include <iostream>
 #include <fstream>
@@ -12,21 +13,24 @@
 // TODO Diff files
 int main(int argc, char ** argv)
 {
+    /*
     if(argc == 1)
     {
         std::cout << "Creating a test package:" << std::endl;
-        std::cout << "QuarkTest [Test Script]" << std::endl << std::endl;
+        std::cout << "QETest [Test Script]" << std::endl << std::endl;
         std::cout << "Running a test package:" << std::endl;
-        std::cout << "QuarkTest [Test Package] [Test Results*]" << std::endl << std::endl;
+        std::cout << "QETest [Test Package] [Test Results*]" << std::endl << std::endl;
         std::cout << "* - Optional argument" << std::endl;
         return 0;
     }
+    */
+    LuaTest::Test();
 
-    // QuarkTest [Test Name]
+    // QETest [Test Name]
     //if(argc == 2)
     //{
     //    std::ifstream file(argv)
     //}
-    MathTest::Vector2Test<int>();
+    //MathTest::Vector2Test<int>();
     return 0;
 }

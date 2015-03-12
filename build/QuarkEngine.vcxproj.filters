@@ -32,7 +32,10 @@
     <ClCompile Include="..\src\common\stdafx.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\util\fileSystem.cpp">
+    <ClCompile Include="..\src\util\QEFileSystem.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\luaTest.cpp">
       <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,28 +43,31 @@
     <ClInclude Include="..\src\common\stdafx.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\singleton.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\math\vector4.h">
-      <Filter>math\vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\math\quaternion.h">
-      <Filter>math\vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\math\vector2.h">
-      <Filter>math\vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\math\vector3.h">
-      <Filter>math\vector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\math\angle.h">
+    <ClInclude Include="..\src\math\QEAngle.h">
       <Filter>math\angle</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\math\interpolate.h">
+    <ClInclude Include="..\src\math\QEInterpolate.h">
       <Filter>math\interpolate</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\fileSystem.h">
+    <ClInclude Include="..\src\math\QEQuaternion.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\QEVector2.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\QEVector3.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\math\QEVector4.h">
+      <Filter>math\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEFileSystem.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QESingleton.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\luaTest.h">
       <Filter>util</Filter>
     </ClInclude>
   </ItemGroup>
