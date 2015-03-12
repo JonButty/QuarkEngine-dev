@@ -6,6 +6,5 @@ bin/
 *.lastbuildstate
 *.obj
 *.idb
-*.pdb
 *.ipch
-*.txt
+*.suo
