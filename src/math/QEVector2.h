@@ -8,6 +8,8 @@
 #ifndef QEVECTOR2_H
 #define QEVECTOR2_H
 
+#include "common/QEDefines.h"
+
 template <typename T>
 class QEVector2
 {
@@ -18,153 +20,155 @@ public:
     static const QEVector2<T> UnitY;
     
 public:
-    QEVector2()
-        :   x_(0),
-            y_(0)
+
+    QE_API QEVector2 ()
+            :   x_(0),
+                y_(0)
     {
     }
 
-    QEVector2(T x,
-            T y)
-            :   x_(x),
-                y_(y)
+    QE_API QEVector2 (T x,
+                      T y)
+            :   x_ (x),
+                y_ (y)
     {
     }
 
-    QEVector2(const QEVector2<T>& val)
-        :   x_(val.x_),
-            y_(val.y_)
+    QE_API QEVector2 (QE_IN const QEVector2<T>& val)
+            :   x_ (val.x_),
+                y_ (val.y_)
     {
     }
 
-    QEVector2<T> ProjectOnto(const QEVector2<T>& val) const
+    QE_API QEVector2<T> ProjectOnto (QE_IN const QEVector2<T>& val) const
     {
-        return (Dot(val) / val.SquareLength()) * val;
+        return (Dot (val) / val.SquareLength () ) * val;
     }
 
-    QEVector2<T> ReflectAbout(const QEVector2<T>& val) const
+    QE_API QEVector2<T> ReflectAbout (QE_IN const QEVector2<T>& val) const
     {
         return *this - T(2) * ProjectOnto(val.Normalized());
     }
 
-    T Dot(const QEVector2<T>& val) const
+    QE_API T Dot (QE_IN const QEVector2<T>& val) const
     {
         return (x_ * val.x_) + (y_ * val.y_);
     }
 
-    void Normalize()
+    QE_API void Normalize ()
     {
-        *this /= Length();
+        *this /= Length ();
     }
 
-    QEVector2<T> Normalized() const
+    QE_API QEVector2<T> Normalized () const
     {
-        return *this / Length();
+        return *this / Length ();
     }
 
-    T SquareLength() const
+    QE_API T SquareLength () const
     {
-        return Dot(*this);
+        return Dot (*this);
     }
 
-    T Length() const
+    QE_API T Length () const
     {
-        return static_cast<T>(std::sqrt(SquareLength()));
+        return static_cast<T>(std::sqrt (SquareLength ()));
     }
 
 public:
-    QEVector2<T>& operator=(const QEVector2<T>& val)
+
+    QE_API QEVector2<T>& operator= (QE_IN const QEVector2<T>& val)
     {
         x_ = val.x_;
         y_ = val.y_;
         return *this;
     }
 
-    QEVector2<T> operator+(const QEVector2<T>& val) const
+    QE_API QEVector2<T> operator+ (QE_IN const QEVector2<T>& val) const
     {
-        QEVector2<T> ret(x_ + val.x_,y_ + val.y_);
+        QEVector2<T> ret (x_ + val.x_,y_ + val.y_);
         return ret;
     }
 
-    QEVector2<T> operator-(const QEVector2<T>& val) const
+    QE_API QEVector2<T> operator- (QE_IN const QEVector2<T>& val) const
     {
-        QEVector2<T> ret(x_ - val.x_,y_ - val.y_);
+        QEVector2<T> ret (x_ - val.x_,y_ - val.y_);
         return ret;
     }
 
-    QEVector2<T> operator*(T val) const
+    QE_API QEVector2<T> operator* (QE_IN T val) const
     {
         QEVector2<T> ret(x_ * val,y_ * val);
         return ret;
     }
 
-    QEVector2<T> operator/(T val) const
+    QE_API QEVector2<T> operator/ (QE_IN T val) const
     {
-        QEVector2<T> ret(x_ / val,y_ / val);
+        QEVector2<T> ret (x_ / val,y_ / val);
         return ret;
     }
 
-    QEVector2<T>& operator+=(const QEVector2<T>& val)
+    QE_API QEVector2<T>& operator+= (QE_IN const QEVector2<T>& val)
     {
         x_ += val.x_;
         y_ += val.y_;
         return *this;
     }
 
-    QEVector2<T>& operator-=(const QEVector2<T>& val)
+    QE_API QEVector2<T>& operator-= (QE_IN const QEVector2<T>& val)
     {
         x_ -= val.x_;
         y_ -= val.y_;
         return *this;
     }
 
-    QEVector2<T>& operator*=(T val)
+    QE_API QEVector2<T>& operator*= (QE_IN T val)
     {
         x_ *= val;
         y_ *= val;
         return *this;
     }
 
-    QEVector2<T>& operator/=(T val)
+    QE_API QEVector2<T>& operator/= (QE_IN T val)
     {
         x_ /= val;
         y_ /= val;
         return *this;
     }
 
-    const T& operator[](unsigned int index) const
+    QE_API const T& operator[] (QE_IN unsigned int index) const
     {
         return v_[index];
     }
 
-    T& operator[](unsigned int index)
+    QE_API T& operator[] (QE_IN unsigned int index)
     {
         return v_[index];
     }
 
 public:
 
-    void X(T val)
+    QE_API void X (QE_IN T val)
     {
         x_ = val;
     }
 
-    T X() const
+    QE_API T X () const
     {
         return x_;
     }
 
-    void Y(T val)
+    QE_API void Y (QE_IN T val)
     {
         y_ = val;
     }
 
-    T Y() const
+    QE_API T Y () const
     {
         return y_;
     }
 
-    T* Vector() const
+    QE_API T* Vector () const
     {
         return v_;
     }
@@ -200,11 +204,10 @@ const QEVec2D QEVec2D::UnitX(1,0);
 const QEVec2D QEVec2D::UnitY(0,1);
 
 template <typename T>
-QEVector2<T> operator*(T a,
-                       const QEVector2<T>& b)
+QE_API QEVector2<T> operator* (QE_IN T a,
+                               QE_IN const QEVector2<T>& b)
 {
-    return QEVector2<T>(b.X() * a,
-                            b.Y() * a);
+    return QEVector2<T> ( b.X() * a, b.Y() * a);
 }
 
 #endif

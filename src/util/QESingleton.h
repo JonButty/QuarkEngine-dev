@@ -14,6 +14,7 @@ template <class T>
 class QESingleton
 {
 public:
+
     static T& Instance()
     {
         return *InstancePtr();
@@ -24,17 +25,22 @@ public:
         if(!instance_)
         {
             instance_ = new T();
-            atexit(Singleton<T>::Destroy);
+            atexit(QESingleton<T>::Destroy);
         }
         return instance_;
     }
+
 private:
+
     static void Destroy()
     {
         delete instance_;
     }
+
 private:
+
     static T* instance_;
+
 };
 
 template <typename T>

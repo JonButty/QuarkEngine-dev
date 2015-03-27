@@ -16,9 +16,14 @@
   <ItemGroup>
     <ClCompile Include="..\src\common\stdafx.cpp" />
     <ClCompile Include="..\src\util\luaTest.cpp" />
+    <ClCompile Include="..\src\util\QEConsoleLogger.cpp" />
     <ClCompile Include="..\src\util\QEFileSystem.cpp" />
+    <ClCompile Include="..\src\util\QELogger.cpp" />
+    <ClCompile Include="..\src\util\QELogManager.cpp" />
+    <ClCompile Include="..\src\util\QELuaScript.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\common\QEDefines.h" />
     <ClInclude Include="..\src\common\stdafx.h" />
     <ClInclude Include="..\src\math\QEInterpolate.h" />
     <ClInclude Include="..\src\math\QEAngle.h" />
@@ -27,7 +32,16 @@
     <ClInclude Include="..\src\math\QEVector3.h" />
     <ClInclude Include="..\src\math\QEVector4.h" />
     <ClInclude Include="..\src\util\luaTest.h" />
+    <ClInclude Include="..\src\util\QEConsoleLogger.h" />
     <ClInclude Include="..\src\util\QEFileSystem.h" />
+    <ClInclude Include="..\src\util\QELog.h" />
+    <ClInclude Include="..\src\util\QELogger.h" />
+    <ClInclude Include="..\src\util\QELogManager.h" />
+    <ClInclude Include="..\src\util\QELuaScript.h" />
+    <ClInclude Include="..\src\util\QELuaScriptObject.h" />
+    <ClInclude Include="..\src\util\QEScript.h" />
+    <ClInclude Include="..\src\util\QEScriptManager.h" />
+    <ClInclude Include="..\src\util\QEScriptObject.h" />
     <ClInclude Include="..\src\util\QESingleton.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -64,11 +78,15 @@
     <OutDir>..\bin\$(Configuration)\</OutDir>
     <IncludePath>..\dep\lua-5.2.3_Win32_dll12_lib\include;..\dep\LuaBridge-master\Source\LuaBridge\;..\dep\LuaBridge-master\Source\LuaBridge\detail\;$(IncludePath)</IncludePath>
     <TargetName>$(ProjectName)_D</TargetName>
+    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(ProjectName)$(Configuration)\</IntDir>
     <OutDir>..\bin\$(Configuration)\</OutDir>
     <IncludePath>..\dep\lua-5.2.3_Win32_dll12_lib\include;..\dep\LuaBridge-master\Source\LuaBridge\;..\dep\LuaBridge-master\Source\LuaBridge\detail\;$(IncludePath)</IncludePath>
+    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -77,9 +95,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\src;..\src\common\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\src;..\src\common;</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(ProjectName)$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <ShowIncludes>false</ShowIncludes>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -101,9 +124,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\src;..\src\common\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\src;..\src\common;</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(ProjectName)$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <ShowIncludes>false</ShowIncludes>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

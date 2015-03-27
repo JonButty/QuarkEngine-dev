@@ -14,9 +14,13 @@
 class QEFileSystem : public QESingleton<QEFileSystem>
 {
 public:
+
     QEFileSystem();
+
 private:
+
     void generateTree_();
+
 };
 
 #endif

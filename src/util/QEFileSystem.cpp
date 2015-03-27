@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "util/QEFileSystem.h"
 
 #define DATAFOLDER "../data/"
 

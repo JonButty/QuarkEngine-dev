@@ -8,3 +8,6 @@ bin/
 *.idb
 *.ipch
 *.suo
+build/QuarkEngineDebug/
+build/QuarkEngineRelease/
+doc/html
