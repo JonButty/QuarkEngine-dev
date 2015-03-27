@@ -10,4 +10,6 @@ bin/
 *.suo
 build/QuarkEngineDebug/
 build/QuarkEngineRelease/
-doc/html
+build/QuarkEngineTestDebug/
+build/QuarkEngineTestRelease/
+doc/html/

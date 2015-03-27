@@ -1,5 +1,6 @@
 #include "mathTest.h"
 #include "util/luaTest.h"
+#include "util/QELog.h"
 
 #include <iostream>
 #include <fstream>
@@ -13,6 +14,9 @@
 // TODO Diff files
 int main(int argc, char ** argv)
 {
+    QELogManager::InstancePtr()->Load();
+    QELOG_V("test log");
+
     /*
     if(argc == 1)
     {
