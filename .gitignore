@@ -12,4 +12,6 @@ build/QuarkEngineDebug/
 build/QuarkEngineRelease/
 build/QuarkEngineTestDebug/
 build/QuarkEngineTestRelease/
+build/ipch/
 doc/html/
+doc/latex/
