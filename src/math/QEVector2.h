@@ -6,7 +6,6 @@
 \brief	2D Vector class
 
 *******************************************************************************/
-
 #ifndef QEVECTOR2_H
 #define QEVECTOR2_H
 

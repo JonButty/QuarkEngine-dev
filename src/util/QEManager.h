@@ -1,12 +1,11 @@
 /*!*****************************************************************************
 
-\file 	QEManager.h
-\date 	2015/03/27
+\class 	QEManager
+\date 	2015/03/28
 \author	Jonathan Butt
 \brief	
 
 *******************************************************************************/
-
 #ifndef QEMANAGER_H
 #define QEMANAGER_H
 

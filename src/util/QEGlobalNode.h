@@ -6,7 +6,6 @@
 \brief	
 
 *******************************************************************************/
-
 #ifndef QEGLOBALNODE_H
 #define QEGLOBALNODE_H
 

@@ -7,7 +7,6 @@
 \todo  Integrate scripting into interpolation
 
 *******************************************************************************/
-
 #ifndef QEINTERPOLATE_H
 #define QEINTERPOLATE_H
 

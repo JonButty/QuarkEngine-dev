@@ -6,8 +6,6 @@
 \brief	Quaternion class
 
 *******************************************************************************/
-
-
 #ifndef QEQUATERNION_H
 #define QEQUATERNION_H
 

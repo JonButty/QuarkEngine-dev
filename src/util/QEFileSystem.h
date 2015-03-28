@@ -1,11 +1,11 @@
-/********************************************************************
-	created:	2015/01/27
-	filename: 	QEFileSystem.h
-	author:		Jonathan Butt
-	purpose:	An interface that allows users to manipulate files without
-                needing to know the actual path.
-*********************************************************************/
+/*!*****************************************************************************
 
+\class 	QEFileSystem
+\date 	2015/03/28
+\author	Jonathan Butt
+\brief	
+
+*******************************************************************************/
 #ifndef QEFILESYSTEM_H
 #define QEFILESYSTEM_H
 
