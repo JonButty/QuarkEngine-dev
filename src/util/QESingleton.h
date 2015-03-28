@@ -25,14 +25,14 @@ public:
         if(!instance_)
         {
             instance_ = new T();
-            atexit(QESingleton<T>::Destroy);
+            atexit(QESingleton<T>::destroy_);
         }
         return instance_;
     }
 
 private:
 
-    static void Destroy()
+    static void destroy_()
     {
         delete instance_;
     }

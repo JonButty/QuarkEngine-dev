@@ -9,6 +9,7 @@
 #define QESCRIPTMANAGER_H
 
 #include "QESingleton.h"
+#include "QEManager.h"
 
 class QEScriptManager : public QESingleton<QEScriptManager>
 {

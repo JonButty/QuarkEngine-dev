@@ -4,12 +4,11 @@
 
 #include <sstream>
 
-/*
 QELogManager::QELogManager()
 {
     loggerList_.push_back(new QEConsoleLogger());
 }
-*/
+
 QELogManager::~QELogManager()
 {
     LoggerList::iterator it = loggerList_.begin();
@@ -22,7 +21,7 @@ QELogManager::~QELogManager()
     loggerList_.clear();
 }
 
-void QELogManager::Load()
+QE_INT QELogManager::Load()
 {
     LoggerList::iterator it = loggerList_.begin();
     
@@ -31,9 +30,10 @@ void QELogManager::Load()
         (*it)->Load();
         ++it;
     }
+    return 0;
 }
 
-void QELogManager::Unload()
+QE_INT QELogManager::Unload()
 {
     LoggerList::iterator it = loggerList_.begin();
 
@@ -42,6 +42,7 @@ void QELogManager::Unload()
         (*it)->Unload();
         ++it;
     }
+    return 0;
 }
 
 /*!*****************************************************************************
@@ -58,9 +59,9 @@ void QELogManager::Unload()
 
 *******************************************************************************/
 void QELogManager::Log(const std::string& filePath,
-                       unsigned int lineNumber,
+                       QE_UINT lineNumber,
                        const std::string& msg,
-                       unsigned int level)
+                       QE_UINT level)
 {
     std::string filteredMsg = filterMessage_(filePath,lineNumber,msg,level);
 
@@ -70,23 +71,27 @@ void QELogManager::Log(const std::string& filePath,
 
         while(it != loggerList_.end())
         {
-            (*it)->Log(msg);
+            (*it)->Log(filteredMsg);
             ++it;
         }
     }
 }
 
-void QELogManager::SetFilter(const std::vector<std::string> const* filterList)
+void QELogManager::SetFilter(const std::vector<std::string>* filterList)
 {
+    if(!filterList)
+        return;
 
+    for(unsigned int i = 0; i < filterList->size(); ++i)
+        filterList_.insert((*filterList)[i]);
 }
 
 //------------------------------------------------------------------------------
 
 std::string QELogManager::filterMessage_(const std::string& file,
-                                         unsigned int lineNumber,
+                                         QE_UINT lineNumber,
                                          const std::string& msg,
-                                         unsigned int level)
+                                         QE_UINT level)
 {
     if(!isFileFiltered_(file))
         return std::string();
@@ -108,7 +113,7 @@ std::string QELogManager::filterMessage_(const std::string& file,
         break;
     }
 
-    ss << file << " (" << lineNumber << "): " << msg;
+    ss << file.substr(file.find_last_of('\\') + 1) << " (" << lineNumber << "): " << msg << '\0';
     return ss.str();
 }
 
@@ -120,5 +125,5 @@ std::string QELogManager::filterMessage_(const std::string& file,
 *******************************************************************************/
 bool QELogManager::isFileFiltered_(const std::string& file)
 {
-    return filterList_.find(file) != filterList_.end();
+    return (filterList_.size() == 0) || (filterList_.find(file) != filterList_.end());
 }
