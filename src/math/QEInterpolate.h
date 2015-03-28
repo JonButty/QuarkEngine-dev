@@ -1,11 +1,13 @@
-/********************************************************************
-	created:	2015/01/27
-	filename: 	QEInterpolate.h
-	author:		Jonathan Butt
-	purpose:	
-*********************************************************************/
+/*!*****************************************************************************
 
-// TODO integrate scripting into interpolation
+\class 	QEInterpolate
+\date 	2015/03/28
+\author	Jonathan Butt
+\brief	
+\todo  Integrate scripting into interpolation
+
+*******************************************************************************/
+
 #ifndef QEINTERPOLATE_H
 #define QEINTERPOLATE_H
 

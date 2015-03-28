@@ -1,15 +1,20 @@
-/********************************************************************
-	created:	2015/01/27
-	filename: 	QEQuaternion.h
-	author:		Jonathan Butt
-	purpose:	
-*********************************************************************/
+/*!*****************************************************************************
+
+\class  QEQuaternion
+\date 	2015/03/28
+\author	Jonathan Butt
+\brief	Quaternion class
+
+*******************************************************************************/
+
 
 #ifndef QEQUATERNION_H
 #define QEQUATERNION_H
 
+#include "QEVector4.h"
+
 template <typename T>
-class QEQuaternion : public Vector4 <T>
+class QEQuaternion : public QEVector4 <T>
 {
 public:
 
