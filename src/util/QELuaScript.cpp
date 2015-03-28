@@ -31,9 +31,12 @@ int QELuaScript::Unload()
     return 0;
 }
 
-QE_API QEScriptObject* QELuaScript::LoadScript(QEScriptObject* scriptObj,
-                                               const std::string& filePath)
+QEScriptObject* QELuaScript::LoadScript(QEScriptObject* scriptObj,
+                                        const std::string& filePath)
 {
+    QE_UNUSED(scriptObj);
+    QE_UNUSED(filePath);
+
     if(filePath.size() == 0)
         return 0;
     
@@ -50,16 +53,21 @@ QE_API QEScriptObject* QELuaScript::LoadScript(QEScriptObject* scriptObj,
     {
 
     }
+    return 0;
 }
 
 QEScriptObject* QELuaScript::RunScript(QEScriptObject* scriptObj,
                                       const std::string& filePath)
 {
+    QE_UNUSED(scriptObj);
+    QE_UNUSED(filePath);
+
     return 0;
 }
 
 int QELuaScript::ErrorCheck(QEScriptObject* scriptObj)
 {
+    QE_UNUSED(scriptObj);
     return 0;
 }
 

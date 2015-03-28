@@ -1,5 +1,5 @@
-#ifndef DEFINES_H
-#define DEFINES_H
+#ifndef QEDEFINES_H
+#define QEDEFINES_H
 
 #define QE_API
 
@@ -8,5 +8,7 @@
 #define QE_IN_OPT
 #define QE_OUT
 #define QE_IN_OUT
+
+#define QE_UNUSED(arg) arg;
 
 #endif

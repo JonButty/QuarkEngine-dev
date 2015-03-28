@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\QEDefines.h" />
+    <ClInclude Include="..\src\common\QETypes.h" />
     <ClInclude Include="..\src\common\stdafx.h" />
     <ClInclude Include="..\src\math\QEInterpolate.h" />
     <ClInclude Include="..\src\math\QEAngle.h" />
@@ -34,11 +35,13 @@
     <ClInclude Include="..\src\util\luaTest.h" />
     <ClInclude Include="..\src\util\QEConsoleLogger.h" />
     <ClInclude Include="..\src\util\QEFileSystem.h" />
+    <ClInclude Include="..\src\util\QEGlobalNode.h" />
     <ClInclude Include="..\src\util\QELog.h" />
     <ClInclude Include="..\src\util\QELogger.h" />
     <ClInclude Include="..\src\util\QELogManager.h" />
     <ClInclude Include="..\src\util\QELuaScript.h" />
     <ClInclude Include="..\src\util\QELuaScriptObject.h" />
+    <ClInclude Include="..\src\util\QEManager.h" />
     <ClInclude Include="..\src\util\QEScript.h" />
     <ClInclude Include="..\src\util\QEScriptManager.h" />
     <ClInclude Include="..\src\util\QEScriptObject.h" />
@@ -98,7 +101,7 @@
       <AdditionalIncludeDirectories>..\src;..\src\common;</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(ProjectName)$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <ForcedIncludeFiles>
       </ForcedIncludeFiles>
       <ShowIncludes>false</ShowIncludes>
@@ -127,7 +130,7 @@
       <AdditionalIncludeDirectories>..\src;..\src\common;</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(ProjectName)$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <ForcedIncludeFiles>
       </ForcedIncludeFiles>
       <ShowIncludes>false</ShowIncludes>

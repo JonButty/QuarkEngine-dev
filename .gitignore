@@ -8,10 +8,11 @@ bin/
 *.idb
 *.ipch
 *.suo
+*.opensdf
 build/QuarkEngineDebug/
 build/QuarkEngineRelease/
-build/QuarkEngineTestDebug/
-build/QuarkEngineTestRelease/
+build/QuarkTestDebug/
+build/QuarkTestRelease/
 build/ipch/
 doc/html/
 doc/latex/

@@ -41,9 +41,9 @@
     <ClCompile Include="..\src\util\QELuaScript.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\util\QELogManager.cpp" />
     <ClCompile Include="..\src\util\QEConsoleLogger.cpp" />
     <ClCompile Include="..\src\util\QELogger.cpp" />
+    <ClCompile Include="..\src\util\QELogManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\stdafx.h">
@@ -100,5 +100,12 @@
     </ClInclude>
     <ClInclude Include="..\src\util\QELogManager.h" />
     <ClInclude Include="..\src\util\QELog.h" />
+    <ClInclude Include="..\src\util\QEGlobalNode.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEManager.h" />
+    <ClInclude Include="..\src\common\QETypes.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
