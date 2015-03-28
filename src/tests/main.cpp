@@ -1,6 +1,6 @@
+#include "common/stdafx.h"
 #include "mathTest.h"
-#include "util/luaTest.h"
-#include "util/QELog.h"
+#include "luaTest.h"
 
 #include <iostream>
 #include <fstream>
@@ -8,13 +8,17 @@
 // Allow creation of test packages via script or testing components by loading
 // test packages
 
-// TODO integrate scripting language that allows for setting up an environment,
+// \todo integrate scripting language that allows for setting up an environment,
 // and calling functions with certain arguments
 // Print out of results should be automatic
-// TODO Diff files
+// \todo Diff files to test testing output
 int main(int argc, char ** argv)
 {
     QELogManager::InstancePtr()->Load();
+    std::vector<std::string> filter;
+    filter.push_back("main.cpp");
+
+    QELogManager::InstancePtr()->SetFilter(&filter);
     QELOG_V("test log");
 
     /*
@@ -28,7 +32,7 @@ int main(int argc, char ** argv)
         return 0;
     }
     */
-    LuaTest::Test();
+    //LuaTest::Test();
 
     // QETest [Test Name]
     //if(argc == 2)

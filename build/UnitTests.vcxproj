@@ -91,12 +91,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\tests\luaTest.cpp" />
     <ClCompile Include="..\src\tests\main.cpp" />
     <ClCompile Include="..\src\tests\mathTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\tests\luaTest.h" />
     <ClInclude Include="..\src\tests\mathTest.h" />
-    <ClInclude Include="..\src\tests\testerBase.h" />
     <ClInclude Include="..\src\tests\testCodes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

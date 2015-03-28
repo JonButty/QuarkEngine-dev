@@ -5,17 +5,25 @@
     <ClCompile Include="..\src\tests\mathTest.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\tests\luaTest.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Math">
       <UniqueIdentifier>{9c50cde2-bd6e-495f-af76-6ef8bc660862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{121fb708-7a99-4244-b597-dd296ff2851e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\tests\mathTest.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\tests\testerBase.h" />
     <ClInclude Include="..\src\tests\testCodes.h" />
+    <ClInclude Include="..\src\tests\luaTest.h">
+      <Filter>Script</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

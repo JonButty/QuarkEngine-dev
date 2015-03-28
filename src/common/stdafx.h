@@ -8,3 +8,4 @@
 
 #include "QEDefines.h"
 #include "QETypes.h"
+#include "util/QELog.h"

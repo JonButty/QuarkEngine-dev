@@ -14,21 +14,11 @@ class MathTest
 {
 public:
 
-    template <typename T>
-    static bool Vector2Test()
-    {
-        QEVec2D vec;
-        vec.X();
-        return true;
-    }
+    static bool Test();
 
 private:
 
-    template <typename T>
-    static bool vectorInitValue()
-    {
-        
-    }
+    static bool vector2Test();
 };
 
 #endif

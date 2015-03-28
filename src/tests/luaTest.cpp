@@ -1,9 +1,10 @@
-#include "stdafx.h"
+#include "common/stdafx.h"
 #include "luaTest.h"
 
-#include <LuaBridge.h>
+//#include <LuaBridge.h>
 #include <iostream>
 
+/*
 extern "C"
 {
 #include "lua.h"
@@ -12,10 +13,10 @@ extern "C"
 }
 
 using namespace luabridge;
-
+*/
 void LuaTest::Test()
 {
-    lua_State* L = luaL_newstate();
+    /*lua_State* L = luaL_newstate();
     int i = luaL_dofile(L, "data/config/config.lua");
     luaL_openlibs(L);
     lua_pcall(L, 0, 0, 0);
@@ -25,4 +26,5 @@ void LuaTest::Test()
     int answer = n.cast<int>();
     std::cout << luaString << std::endl;
     std::cout << "And here's our number:" << answer << std::endl;
+    */
 }

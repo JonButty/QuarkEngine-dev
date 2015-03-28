@@ -35,15 +35,18 @@
     <ClCompile Include="..\src\util\QEFileSystem.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\util\luaTest.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\util\QELuaScript.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\util\QEConsoleLogger.cpp" />
-    <ClCompile Include="..\src\util\QELogger.cpp" />
-    <ClCompile Include="..\src\util\QELogManager.cpp" />
+    <ClCompile Include="..\src\util\QEConsoleLogger.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\QELogger.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\QELogManager.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\stdafx.h">
@@ -73,9 +76,6 @@
     <ClInclude Include="..\src\util\QESingleton.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\luaTest.h">
-      <Filter>util</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\util\QEScriptManager.h">
       <Filter>util</Filter>
     </ClInclude>
@@ -94,18 +94,26 @@
     <ClInclude Include="..\src\util\QELogger.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\QEConsoleLogger.h" />
     <ClInclude Include="..\src\common\QEDefines.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\QELogManager.h" />
-    <ClInclude Include="..\src\util\QELog.h" />
     <ClInclude Include="..\src\util\QEGlobalNode.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\QEManager.h" />
     <ClInclude Include="..\src\common\QETypes.h">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEConsoleLogger.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QELog.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QELogManager.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEManager.h">
+      <Filter>util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
