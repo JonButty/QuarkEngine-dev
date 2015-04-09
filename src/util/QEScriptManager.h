@@ -7,6 +7,10 @@
         script manager holds a database of script objects which have been 
         requested to be loaded.
 \todo create function to clear out unloaded scripts
+\todo implement "reload" function
+\todo add set<scriptobj*> for search by script object
+\todo add map<string,scriptobj*> for search by filepath
+\todo implement tests
 
 *******************************************************************************/
 #ifndef QESCRIPTMANAGER_H
@@ -35,6 +39,7 @@ public:
     QE_API QE_INT Unload();
     QE_API QEScriptObject* LoadScript(QE_IN const std::string& filePath);
     QE_API QEScriptObject* LoadScript(QE_IN QEScriptObject*& scriptObj);
+    QE_API void UnloadScript(QE_IN QEScriptObject*& scriptObj);
     QE_API QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
                            QE_IN const std::string& varName,
                            QE_OUT QE_BOOL* var);
@@ -66,12 +71,16 @@ private:
             if(scriptObj->status_ != QEScriptObject::S_OK)
             {
                 // Script was not loaded properly
-                QE_LOGE(scriptObj->filePath_ << " was loaded with errors, please reload script");
+                scriptLangTable_[it->second.lang_]->ErrorCheck(scriptObj);
                 return false;
             }
 
             // Get variable
-            return (scriptLangTable_[it->second.lang_]->*a)(scriptObj,varName,var);
+            bool retVal = (scriptLangTable_[it->second.lang_]->*a)(scriptObj,varName,var);
+            
+            if(!retVal)
+                scriptLangTable_[it->second.lang_]->ErrorCheck(scriptObj);
+            return retVal;
         }
 
         // Script was not loaded

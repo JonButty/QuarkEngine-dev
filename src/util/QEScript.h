@@ -8,10 +8,7 @@
         the language specifications. The QEScriptManager will be in charge of 
         instantiating a copy of each derived class of QEScript to be able to 
         support script functionality.
-
-\todo Figure out how to abstractly get variables without hardcoding script 
-      language translation to derived classes of QEScript to call functions
-
+        
 *******************************************************************************/
 #ifndef QESCRIPT_H
 #define QESCRIPT_H
@@ -43,7 +40,7 @@ public:
     QE_API virtual void UnloadScript(QE_IN QEScriptObject*& scriptObj) = 0;
     QE_API virtual QEScriptObject* RunScript(QE_IN_OPT QEScriptObject* scriptObj, 
                                              QE_IN const std::string& filePath);
-    QE_API virtual QE_INT ErrorCheck(QE_IN_OPT QEScriptObject*& scriptObj) = 0;
+    QE_API virtual QE_BOOL ErrorCheck(QE_IN_OPT QEScriptObject*& scriptObj) = 0;
     QE_API virtual QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
                                    QE_IN const std::string& varName,
                                    QE_OUT QE_BOOL* var) = 0;

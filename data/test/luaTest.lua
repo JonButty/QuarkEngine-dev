@@ -1,3 +1,3 @@
 testString = "LuaBridge works!"
-number = 42
+testNumber = 42
 testBool = true

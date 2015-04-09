@@ -124,6 +124,20 @@ QE_API QEScriptObject* QEScriptManager::LoadScript(QE_IN QEScriptObject*& script
 
 /*!*****************************************************************************
 
+\name   UnloadScript
+\param	QE_IN QEScriptObject * & scriptObj
+\return QE_API void
+
+\brief
+
+*******************************************************************************/
+QE_API void QEScriptManager::UnloadScript(QE_IN QEScriptObject*& scriptObj)
+{
+    scriptObj->
+}
+
+/*!*****************************************************************************
+
 \name   GetBool
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName

@@ -31,7 +31,7 @@ public:
     QE_API void UnloadScript(QE_IN QEScriptObject*& scriptObj);
     QE_API QEScriptObject* RunScript(QE_IN_OPT QEScriptObject* scriptObj,
                                      QE_IN const std::string& filePath);
-    QE_API QE_INT ErrorCheck(QE_IN QEScriptObject*& scriptObj);
+    QE_API QE_BOOL ErrorCheck(QE_IN QEScriptObject*& scriptObj);
     QE_API QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
                            QE_IN const std::string& varName,
                            QE_OUT QE_BOOL* var) ;

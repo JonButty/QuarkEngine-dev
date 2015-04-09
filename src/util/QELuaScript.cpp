@@ -148,21 +148,26 @@ QE_API QEScriptObject* QELuaScript::RunScript(QE_IN_OPT QEScriptObject* scriptOb
 \brief
 
 *******************************************************************************/
-QE_API QE_INT QELuaScript::ErrorCheck(QE_IN QEScriptObject*& scriptObj)
+QE_API QE_BOOL QELuaScript::ErrorCheck(QE_IN QEScriptObject*& scriptObj)
 {
     switch(scriptObj->status_)
     {
     case QEScriptObject::S_OK:
+        return true;
+    case QEScriptObject::S_FILE_OPEN_ERROR:
+        QE_LOGW("Failed to open script: " << lua_tostring(reinterpret_cast<QELuaScriptObject*>(scriptObj)->luaState_,-1));
         break;
     case QEScriptObject::S_COMPILE_ERRORS:
-        QE_LOGW("Failed to load script: ");
-        QE_LOGE(lua_tostring(reinterpret_cast<QELuaScriptObject*>(scriptObj)->luaState_,-1));
+        QE_LOGW("Failed to load script: " << lua_tostring(reinterpret_cast<QELuaScriptObject*>(scriptObj)->luaState_,-1));
         break;
-    case QEScriptObject::S_FILE_OPEN_ERROR:
-        QE_LOGW("Failed to open script: ");
-        QE_LOGW(lua_tostring(reinterpret_cast<QELuaScriptObject*>(scriptObj)->luaState_,-1));
+    case QEScriptObject::S_VAR_NOT_FOUND:
+        QE_LOGW("Failed to find previous variable");
+        break;
+    case QEScriptObject::S_INVALID_VAR_TYPE:
+        QE_LOGW("Invalid type for previous variable");
+        break;
     }
-    return scriptObj->status_;
+    return false;
 }
 
 /*!*****************************************************************************
@@ -215,6 +220,23 @@ QE_API QE_BOOL QELuaScript::GetInt(QE_IN QEScriptObject*& scriptObj,
                                    QE_IN const std::string& varName,
                                    QE_OUT QE_INT* var)
 {
+    LuaRef lRef = getGlobal(reinterpret_cast<QELuaScriptObject*&>(scriptObj)->luaState_,
+                            varName.c_str());
+
+    if(lRef.isNil())
+    {
+        scriptObj->status_ = QEScriptObject::S_VAR_NOT_FOUND;
+        return false;
+    }
+
+    if(lRef.isFunction() || lRef.isLightUserdata() || lRef.isString() ||
+       lRef.isTable() || lRef.isThread() || lRef.isUserdata())
+    {
+        scriptObj->status_ = QEScriptObject::S_INVALID_VAR_TYPE;
+        return false;
+    }
+
+    *var = lRef.cast<QE_INT>();
     return true;
 }
 
@@ -233,6 +255,23 @@ QE_API QE_BOOL QELuaScript::GetFloat(QE_IN QEScriptObject*& scriptObj,
                                      QE_IN const std::string& varName,
                                      QE_OUT QE_FLOAT* var)
 {
+    LuaRef lRef = getGlobal(reinterpret_cast<QELuaScriptObject*&>(scriptObj)->luaState_,
+                            varName.c_str());
+
+    if(lRef.isNil())
+    {
+        scriptObj->status_ = QEScriptObject::S_VAR_NOT_FOUND;
+        return false;
+    }
+
+    if(lRef.isFunction() || lRef.isLightUserdata() || lRef.isString() ||
+       lRef.isTable() || lRef.isThread() || lRef.isUserdata())
+    {
+        scriptObj->status_ = QEScriptObject::S_INVALID_VAR_TYPE;
+        return false;
+    }
+
+    *var = lRef.cast<QE_FLOAT>();
     return true;
 }
 
@@ -265,6 +304,6 @@ QE_API QE_BOOL QELuaScript::GetString(QE_IN QEScriptObject*& scriptObj,
         scriptObj->status_ = QEScriptObject::S_VAR_NOT_FOUND;
         return false;
     }
-    *var = lRef.cast<QE_BOOL>();
+    *var = lRef.cast<std::string>();
     return true;
 }
