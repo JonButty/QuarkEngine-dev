@@ -4,6 +4,7 @@
 \date 	2015/03/26
 \author	Jonathan Butt
 \brief	
+\todo Filter by output level
 
 *******************************************************************************/
 #ifndef QELOGMANAGER_H

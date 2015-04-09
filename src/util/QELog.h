@@ -11,8 +11,27 @@
 
 #include "QELogManager.h"
 
-#define QELOG_V(msg) QELogManager::InstancePtr()->Log(__FILE__,__LINE__,msg,QELogManager::L_VERBOSE)
-#define QELOG_W(msg) QELogManager::InstancePtr()->Log(__FILE__,__LINE__,msg,QELogManager::L_WARNING)
-#define QELOG_E(msg) QELogManager::InstancePtr()->Log(__FILE__,__LINE__,msg,QELogManager::L_ERROR)
+#include <sstream>
+
+#define QE_LOGV(msg)\
+{\
+    std::stringstream ss;\
+    ss << msg << '\0';\
+    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_VERBOSE);\
+}
+
+#define QE_LOGW(msg)\
+{\
+    std::stringstream ss;\
+    ss << msg << '\0';\
+    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_WARNING);\
+}
+
+#define QE_LOGE(msg)\
+{\
+    std::stringstream ss;\
+    ss << msg << '\0';\
+    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_ERROR);\
+}
 
 #endif

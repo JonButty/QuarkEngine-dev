@@ -19,7 +19,7 @@ public:
     QE_API QEGlobalNode()
     {
         next_ = Head();
-        Head() = reinterpret_cast<T*>(this);
+        Head() = this;
     }
 
 public:
@@ -38,6 +38,7 @@ public:
 private:
 
     T* next_;
+
 };
 
 #endif

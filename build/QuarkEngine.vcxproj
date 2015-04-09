@@ -14,23 +14,25 @@
     <Text Include="..\src\common\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\common\stdafx.cpp" />
+    <ClCompile Include="..\src\stdafx.cpp" />
     <ClCompile Include="..\src\util\QEConsoleLogger.cpp" />
     <ClCompile Include="..\src\util\QEFileSystem.cpp" />
     <ClCompile Include="..\src\util\QELogger.cpp" />
     <ClCompile Include="..\src\util\QELogManager.cpp" />
     <ClCompile Include="..\src\util\QELuaScript.cpp" />
+    <ClCompile Include="..\src\util\QEScript.cpp" />
+    <ClCompile Include="..\src\util\QEScriptManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\QEDefines.h" />
     <ClInclude Include="..\src\common\QETypes.h" />
-    <ClInclude Include="..\src\common\stdafx.h" />
     <ClInclude Include="..\src\math\QEInterpolate.h" />
     <ClInclude Include="..\src\math\QEAngle.h" />
     <ClInclude Include="..\src\math\QEQuaternion.h" />
     <ClInclude Include="..\src\math\QEVector2.h" />
     <ClInclude Include="..\src\math\QEVector3.h" />
     <ClInclude Include="..\src\math\QEVector4.h" />
+    <ClInclude Include="..\src\stdafx.h" />
     <ClInclude Include="..\src\util\QEConsoleLogger.h" />
     <ClInclude Include="..\src\util\QEFileSystem.h" />
     <ClInclude Include="..\src\util\QEGlobalNode.h" />
@@ -96,7 +98,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\src;..\src\common;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\src\;</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(ProjectName)$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
@@ -125,7 +127,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\src;..\src\common;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\src\;</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(ProjectName)$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>

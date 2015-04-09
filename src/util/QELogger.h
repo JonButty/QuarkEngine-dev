@@ -9,7 +9,7 @@
 #ifndef QELOGGER_H
 #define QELOGGER_H
 
-#include "QEDefines.h"
+#include "common/QEDefines.h"
 
 #include <string>
 

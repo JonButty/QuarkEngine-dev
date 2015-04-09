@@ -9,17 +9,23 @@
 #ifndef QESCRIPTOBJECT_H
 #define QESCRIPTOBJECT_H
 
+#include "common/QETypes.h"
+
 #include <string>
 
 struct QEScriptObject
 {
     enum Status
     {
-        S_OK = 0,
-        S_COMPILE_ERRORS = -1,
+        S_OK,
+        S_FILE_OPEN_ERROR,
+        S_COMPILE_ERRORS,
+        S_VAR_NOT_FOUND,
+        S_INVALID_VAR_TYPE,
         S_TOTAL
     };
-    int status_;
+
+    QE_INT status_;
     std::string filePath_;
 };
 

@@ -10,6 +10,7 @@
 #ifndef QETYPES_H
 #define QETYPES_H
 
+typedef bool                QE_BOOL;
 typedef signed char         QE_CHAR;
 typedef unsigned char       QE_UCHAR;
 typedef signed short        QE_SHORT;

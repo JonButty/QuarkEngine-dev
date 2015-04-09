@@ -1,21 +1,13 @@
-#include "common/stdafx.h"
+#include "stdafx.h"
 #include "luaTest.h"
 
-//#include <LuaBridge.h>
-#include <iostream>
-
-/*
-extern "C"
-{
-#include "lua.h"
-#include "lauxlib.h"
-#include "lualib.h"
-}
-
-using namespace luabridge;
-*/
 void LuaTest::Test()
 {
+    QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript("data/config/config.lua");
+    QE_BOOL boolVal = true;
+    QEScriptManager::InstancePtr()->GetBool(scriptObj,"testString",&boolVal);
+    QE_LOGV("TestBool is " << boolVal);
+
     /*lua_State* L = luaL_newstate();
     int i = luaL_dofile(L, "data/config/config.lua");
     luaL_openlibs(L);

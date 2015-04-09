@@ -9,8 +9,7 @@
 #ifndef QECONSOLELOGGER_H
 #define QECONSOLELOGGER_H
 
-#include "QEDefines.h"
-
+#include "common/QEDefines.h"
 #include "util/QELogger.h"
 
 class QEConsoleLogger : public QELogger

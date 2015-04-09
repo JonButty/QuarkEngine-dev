@@ -6,6 +6,8 @@
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 
-#include "QEDefines.h"
-#include "QETypes.h"
+#include "common/QEDefines.h"
+#include "common/QETypes.h"
+
 #include "util/QELog.h"
+#include "util/QEScriptManager.h"

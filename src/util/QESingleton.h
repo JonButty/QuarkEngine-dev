@@ -6,8 +6,8 @@
 \brief	
 
 *******************************************************************************/
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef QESINGLETON_H
+#define QESINGLETON_H
 
 #include <cstdlib>
 

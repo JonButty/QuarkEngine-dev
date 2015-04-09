@@ -29,9 +29,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\common\stdafx.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\util\QEFileSystem.cpp">
       <Filter>util</Filter>
     </ClCompile>
@@ -47,11 +44,11 @@
     <ClCompile Include="..\src\util\QELogManager.cpp">
       <Filter>util</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp" />
+    <ClCompile Include="..\src\util\QEScript.cpp" />
+    <ClCompile Include="..\src\util\QEScriptManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\common\stdafx.h">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\math\QEAngle.h">
       <Filter>math\angle</Filter>
     </ClInclude>
@@ -115,5 +112,6 @@
     <ClInclude Include="..\src\util\QEManager.h">
       <Filter>util</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\stdafx.h" />
   </ItemGroup>
 </Project>

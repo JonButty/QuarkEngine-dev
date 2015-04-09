@@ -4,6 +4,7 @@
 \date 	2015/03/28
 \author	Jonathan Butt
 \brief	
+\todo automatically register itself to system loader
 
 *******************************************************************************/
 #ifndef QEMANAGER_H
@@ -11,18 +12,17 @@
 
 #include "common/QEDefines.h"
 #include "common/QETypes.h"
-#include "QEGlobalNode.h"
+#include "QESingleton.h"
 
 #include <string>
 
 template <typename T>
-class QEManager : public QEGlobalNode<QEManager<T> >
+class QEManager : public QESingleton<T>
 {
 public:
 
     QE_API QEManager()
     {
-        instance_ = reinterpret_cast<T*>(Head());
     }
 
     QE_API virtual ~QEManager()
@@ -55,50 +55,6 @@ public:
     {
         return 0;
     }
-
-    QE_API virtual bool ErrorCheck(QE_IN QE_INT code) const
-    {
-        QE_UNUSED(code)
-        return 0;
-    }
-
-    QE_API virtual std::string GetErrorString(QE_IN QE_INT code) const
-    {
-        QE_UNUSED(code)
-        return "";
-    }
-
-public:
-
-    QE_API static T& Instance()
-    {
-        return *InstancePtr();
-    }
-
-    QE_API static T* InstancePtr()
-    {
-        if(!instance_)
-        {
-            instance_ = new T();
-            atexit(QEManager<T>::destroy_);
-        }
-        return instance_;
-    }
-
-private:
-    
-    static void destroy_()
-    {
-        delete instance_;
-    }
-
-private:
-
-    static T* instance_;
-
 };
-
-template <typename T>
-T* QEManager<T>::instance_ = 0;
 
 #endif
