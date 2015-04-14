@@ -81,13 +81,15 @@ QE_API QE_INT QEScriptManager::Unload()
 /*!*****************************************************************************
 
 \name   LoadScript
+\param	QE_IN_OUT QEScriptObject *& obj
 \param	QE_IN const std::string & filePath
-\return QE_API QEScriptObject*
+\return QE_API QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QEScriptObject* QEScriptManager::LoadScript(QE_IN const std::string& filePath)
+QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& obj,
+                                           QE_IN const std::string& filePath)
 {
     QE_LOGV("Loading script " << filePath);
 
@@ -96,15 +98,29 @@ QE_API QEScriptObject* QEScriptManager::LoadScript(QE_IN const std::string& file
     if(index < 0)
     {
         QE_LOGW("Script not supported: " << filePath);
-        return 0;
+        return false;
     }
-    
-    QEScriptObject* scriptObj = scriptLangTable_[index]->LoadScript(filePath);
-    ScriptObjectMeta meta = {index,scriptObj};
 
-    filePathScriptObjectMap_.insert(std::pair<FilePath,ScriptObjectMeta>(filePath,meta));
-    scriptLangTable_[index]->ErrorCheck(scriptObj);
-    return scriptObj;
+    // Check if script has been loaded
+    FilePathScriptObjectMap::iterator it = filePathScriptObjectMap_.find(filePath);
+
+    if(it != filePathScriptObjectMap_.end())
+    {
+        ++it->second.refCount_;
+        scriptLangTable_[index]->LoadScript(it->second.obj_);
+        scriptLangTable_[index]->ErrorCheck(it->second.obj_);
+        obj = it->second.obj_;
+        return true;
+    }
+    else
+    {
+        QEScriptObject* scriptObj = scriptLangTable_[index]->LoadScript(filePath);
+        ScriptObjectMeta meta = {index,1,scriptObj};
+        filePathScriptObjectMap_.insert(std::pair<FilePath,ScriptObjectMeta>(filePath,meta));
+        scriptLangTable_[index]->ErrorCheck(scriptObj);
+        obj = scriptObj;
+        return true;
+    }
 }
 
 /*!*****************************************************************************
@@ -116,10 +132,31 @@ QE_API QEScriptObject* QEScriptManager::LoadScript(QE_IN const std::string& file
 \brief
 
 *******************************************************************************/
-QE_API QEScriptObject* QEScriptManager::LoadScript(QE_IN QEScriptObject*& scriptObj)
+QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& scriptObj)
 {
     QE_INT index = checkSupported_(scriptObj->filePath_);
-    return 0;
+    if(index < 0)
+    {
+        QE_LOGW("Script not supported: " << scriptObj->filePath_);
+        return false;
+    }
+
+    // Check if script has been loaded
+    FilePathScriptObjectMap::iterator it = filePathScriptObjectMap_.find(scriptObj->filePath_);
+
+    if(it != filePathScriptObjectMap_.end())
+    {
+        ++it->second.refCount_;
+        scriptLangTable_[index]->LoadScript(it->second.obj_);
+        scriptLangTable_[index]->ErrorCheck(it->second.obj_);
+        scriptObj = it->second.obj_;
+        return true;
+    }
+    else
+    {
+        QE_LOGW("Invalid object");
+        return false;
+    }
 }
 
 /*!*****************************************************************************
@@ -133,7 +170,29 @@ QE_API QEScriptObject* QEScriptManager::LoadScript(QE_IN QEScriptObject*& script
 *******************************************************************************/
 QE_API void QEScriptManager::UnloadScript(QE_IN QEScriptObject*& scriptObj)
 {
-    scriptObj->
+    QE_LOGV("Unloading script " << scriptObj->filePath_);
+
+    QE_INT index = checkSupported_(scriptObj->filePath_);
+
+    if(index < 0)
+        QE_LOGW("Script not supported: " << scriptObj->filePath_);
+
+    // Check if script has been loaded
+    FilePathScriptObjectMap::iterator it = filePathScriptObjectMap_.find(scriptObj->filePath_);
+
+    if(it != filePathScriptObjectMap_.end())
+    {
+        // Only unload if this is the last reference
+        if(it->second.refCount_ == 1)
+        {
+            scriptLangTable_[index]->UnloadScript(scriptObj);
+            filePathScriptObjectMap_.erase(it);
+        }
+        else
+            --it->second.refCount_;
+    }
+    else
+        QE_LOGW("Invalid object");
 }
 
 /*!*****************************************************************************

@@ -37,8 +37,9 @@ public:
 
     QE_API QE_INT Load();
     QE_API QE_INT Unload();
-    QE_API QEScriptObject* LoadScript(QE_IN const std::string& filePath);
-    QE_API QEScriptObject* LoadScript(QE_IN QEScriptObject*& scriptObj);
+    QE_API QE_BOOL LoadScript(QE_IN_OUT QEScriptObject*& obj,
+                              QE_IN const std::string& filePath);
+    QE_API QE_BOOL LoadScript(QE_IN_OUT QEScriptObject*& scriptObj);
     QE_API void UnloadScript(QE_IN QEScriptObject*& scriptObj);
     QE_API QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
                            QE_IN const std::string& varName,
@@ -99,6 +100,7 @@ private:
     struct ScriptObjectMeta
     {
         QE_INT lang_;
+        QE_UINT refCount_;
         QEScriptObject* obj_;
     };
 

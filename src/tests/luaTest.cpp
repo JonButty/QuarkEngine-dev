@@ -5,25 +5,9 @@
 
 QE_BOOL LuaTest::Test()
 {
-    QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript("data/config/config.lua");
-    QE_BOOL boolVal = true;
-    QEScriptManager::InstancePtr()->GetBool(scriptObj,"testBool",&boolVal);
-    QE_LOGV("TestBool is " << boolVal);
-
-    QE_INT intVal;
-    QEScriptManager::InstancePtr()->GetInt(scriptObj,"number",&intVal);
-    QE_LOGV("Number is" << intVal);
-    /*lua_State* L = luaL_newstate();
-    int i = luaL_dofile(L, "data/config/config.lua");
-    luaL_openlibs(L);
-    lua_pcall(L, 0, 0, 0);
-    LuaRef s = getGlobal(L, "testString");
-    LuaRef n = getGlobal(L, "number");
-    std::string luaString = s.cast<std::string>();
-    int answer = n.cast<int>();
-    std::cout << luaString << std::endl;
-    std::cout << "And here's our number:" << answer << std::endl;
-    */
+    QE_BOOL result = true;
+    result = testLoadFile_() ? result : false;
+    return result;
 }
 
 /*!*****************************************************************************
@@ -36,7 +20,8 @@ QE_BOOL LuaTest::Test()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetBool_()
 {
-    QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript(TEST_FILE);
+    //QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript(TEST_FILE);
+    return true;
 }
 
 /*!*****************************************************************************
@@ -49,7 +34,7 @@ QE_BOOL LuaTest::testGetBool_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInt_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -62,7 +47,7 @@ QE_BOOL LuaTest::testGetInt_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetFloat_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -75,7 +60,7 @@ QE_BOOL LuaTest::testGetFloat_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetString_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -88,7 +73,7 @@ QE_BOOL LuaTest::testGetString_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidNameBool_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -101,7 +86,7 @@ QE_BOOL LuaTest::testGetInvalidNameBool_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidNameInt_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -114,7 +99,7 @@ QE_BOOL LuaTest::testGetInvalidNameInt_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidNameFloat_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -127,7 +112,7 @@ QE_BOOL LuaTest::testGetInvalidNameFloat_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidNameString_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -140,7 +125,7 @@ QE_BOOL LuaTest::testGetInvalidNameString_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidTypeBool_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -153,7 +138,7 @@ QE_BOOL LuaTest::testGetInvalidTypeBool_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidTypeInt_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -166,7 +151,7 @@ QE_BOOL LuaTest::testGetInvalidTypeInt_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidTypeFloat_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -179,7 +164,7 @@ QE_BOOL LuaTest::testGetInvalidTypeFloat_()
 *******************************************************************************/
 QE_BOOL LuaTest::testGetInvalidTypeString_()
 {
-
+    return true;
 }
 
 /*!*****************************************************************************
@@ -192,8 +177,11 @@ QE_BOOL LuaTest::testGetInvalidTypeString_()
 *******************************************************************************/
 QE_BOOL LuaTest::testLoadFile_()
 {
-    QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript(TEST_FILE);
-    return QEScriptManager::InstancePtr()->ErrorCheck
+    QEScriptObject* scriptObj;
+    if(!QEScriptManager::InstancePtr()->LoadScript(scriptObj,TEST_FILE))
+        return false;
+    QEScriptManager::InstancePtr()->UnloadScript(scriptObj);
+    return true;
 }
 
 /*!*****************************************************************************
@@ -206,7 +194,10 @@ QE_BOOL LuaTest::testLoadFile_()
 *******************************************************************************/
 QE_BOOL LuaTest::testLoadInvalidFile_()
 {
-
+    QEScriptObject* scriptObj;
+    if(QEScriptManager::InstancePtr()->LoadScript(scriptObj,"foo.lua"))
+        return false;
+    return true;
 }
 
 /*!*****************************************************************************
@@ -219,5 +210,18 @@ QE_BOOL LuaTest::testLoadInvalidFile_()
 *******************************************************************************/
 QE_BOOL LuaTest::testReloadInvalidFile_()
 {
+    return true;
+}
 
+/*!*****************************************************************************
+
+\name   testMultipleReferences_
+\return QE_BOOL
+
+\brief
+
+*******************************************************************************/
+QE_BOOL LuaTest::testMultipleReferences_()
+{
+    return true;
 }

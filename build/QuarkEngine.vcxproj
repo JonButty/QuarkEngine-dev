@@ -115,8 +115,11 @@
       <AdditionalDependencies>lua52.lib;</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>..\dep\lua-5.2.3_Win32_dll12_lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\dep\lua-5.2.3_Win32_dll12_lib\;</AdditionalLibraryDirectories>
     </Lib>
+    <PreBuildEvent>
+      <Command>copyDependencies.bat $(Configuration)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -146,8 +149,11 @@
       <AdditionalDependencies>lua52.lib;</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>..\dep\lua-5.2.3_Win32_dll12_lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\dep\lua-5.2.3_Win32_dll12_lib\;</AdditionalLibraryDirectories>
     </Lib>
+    <PreBuildEvent>
+      <Command>copyDependencies.bat $(Configuration)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

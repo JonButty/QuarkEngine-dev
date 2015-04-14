@@ -23,6 +23,7 @@ private:
     static QE_BOOL testLoadFile_();
     static QE_BOOL testLoadInvalidFile_();
     static QE_BOOL testReloadInvalidFile_();
+    static QE_BOOL testMultipleReferences_();
 };
 
 #endif
