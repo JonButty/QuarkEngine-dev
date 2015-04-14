@@ -8,27 +8,17 @@
 #ifndef MATHTEST_H
 #define MATHTEST_H
 
-#include "math/vector2.h"
+#include "math/QEvector2.h"
 
 class MathTest
 {
 public:
 
-    template <typename T>
-    static bool Vector2Test()
-    {
-        Math::Vec2D vec;
-        vec.X();
-        return true;
-    }
+    static bool Test();
 
 private:
 
-    template <typename T>
-    static bool vectorInitValue()
-    {
-        
-    }
+    static bool vector2Test();
 };
 
 #endif

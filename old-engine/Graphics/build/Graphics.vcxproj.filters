@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{1326c118-17ad-428a-8b4b-2f584cf0b33a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{3e341902-b6d7-4840-b363-19db6241c118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{f2e0ed78-426d-48b5-9226-8dbe820c10aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Color">
+      <UniqueIdentifier>{0584ff43-0f21-4d4b-af3c-174d66f10cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh">
+      <UniqueIdentifier>{0da073df-c3c8-4c36-ac81-61f2c28ac5b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{3031c07f-ac6a-4be6-aed6-ce6ff003e806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader">
+      <UniqueIdentifier>{9294508c-b1fd-42b9-8e3d-a3565611ed07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex">
+      <UniqueIdentifier>{509810bd-871b-4e44-884d-34509aaec338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Factory">
+      <UniqueIdentifier>{6458aee6-89fb-40b9-a8ca-e4ff6d60bd57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Manager">
+      <UniqueIdentifier>{1e8a9d1b-0897-468f-8c7c-a3ff445fb631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\Manager">
+      <UniqueIdentifier>{4eabef94-bd6e-416d-9a67-369b74552c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\Builder">
+      <UniqueIdentifier>{b69623af-f886-4492-bac0-519f8edb2e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\Builder\OBJ">
+      <UniqueIdentifier>{42825956-db0a-433d-aee7-8db1dd944bb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\Builder\Base">
+      <UniqueIdentifier>{6c2bd397-d6fa-4073-a69d-abf7173a9ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Base">
+      <UniqueIdentifier>{dfb14f1e-7b19-44ba-ae06-86258211d839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Default">
+      <UniqueIdentifier>{0adf7abb-a116-47cf-bef7-aa4f04a8f571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera\Manager">
+      <UniqueIdentifier>{a00fe2cf-44f4-4c6b-8ddf-89f23bfefc04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API">
+      <UniqueIdentifier>{32a5cf9f-3ade-4dc9-b785-2c3e0b3e769f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera\Base">
+      <UniqueIdentifier>{3788fa14-0253-48e5-b538-b9f3d0a987e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera\Factory">
+      <UniqueIdentifier>{82774dc8-146a-4701-880f-351c13364c0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Phong">
+      <UniqueIdentifier>{f76a543b-a026-41ed-9f53-4e296446caad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Light">
+      <UniqueIdentifier>{399764f7-1fbf-43db-8d04-3a40d3fba7c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Light\Base">
+      <UniqueIdentifier>{5ae17999-a0a9-4224-aeff-41f6eb4903c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Light\Manager">
+      <UniqueIdentifier>{b74e29c1-0dfd-4016-8c2c-494f69d52f35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Light\Factory">
+      <UniqueIdentifier>{fd1c3c65-9acd-4758-aa53-07d848fc0d08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\DX">
+      <UniqueIdentifier>{8e735d29-94ed-474b-94bc-d65f5b426791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\DX\DX10">
+      <UniqueIdentifier>{7420e419-9105-4c7b-9ac7-c8e83875b23a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\DX">
+      <UniqueIdentifier>{9c840807-1973-4266-9812-a018683a8d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\DX\DX10">
+      <UniqueIdentifier>{f90e3351-a5dc-476c-a67e-0dc55e2cb94f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\DX\DX11">
+      <UniqueIdentifier>{22ac8ec4-0850-41aa-8ebf-3ea6e9629a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Base\DX">
+      <UniqueIdentifier>{f0b05962-3837-405b-9846-71fceebc224b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Base\DX\DX10">
+      <UniqueIdentifier>{4aa03ac4-4b54-49c8-b7c6-7c6835a10b27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Base\DX\DX11">
+      <UniqueIdentifier>{e4d1d2d1-9d9d-496d-9eec-9043845ae2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Phong\DX">
+      <UniqueIdentifier>{02fc1966-3194-45a1-8f18-12814567c6f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Phong\DX\DX10">
+      <UniqueIdentifier>{79e24ac9-fbbc-4b91-80b0-97741ac2c52e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Phong\DX\DX11">
+      <UniqueIdentifier>{a952da7b-b26b-4c0e-9e9f-317e1d4d80a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\ShaderTable">
+      <UniqueIdentifier>{75200bbd-76eb-48b6-9c43-b4cd9327aba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex\Layout">
+      <UniqueIdentifier>{432d26f5-8c30-4a57-80fe-4ce61b209734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex\Layout\DX">
+      <UniqueIdentifier>{b1e478b7-706e-4309-a80c-affbb34c06f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex\Layout\DX\DX10">
+      <UniqueIdentifier>{af3e59ed-3af3-45c2-9051-2a6ac0c71c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex\Layout\DX\DX11">
+      <UniqueIdentifier>{15453318-b684-46f9-8dca-ac6faa90dc1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\ShaderTable\DX">
+      <UniqueIdentifier>{0a306826-8d15-469a-887c-92d6f743fa17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\ShaderTable\DX\DX10">
+      <UniqueIdentifier>{5d8f7ea7-5854-49c7-87ac-ba14e93a132b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\ShaderTable\DX\DX11">
+      <UniqueIdentifier>{d21a4793-6c04-46ef-9967-fbcf647eda67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\API\DX\DX11">
+      <UniqueIdentifier>{f2d9503a-ee80-42c3-9283-636cc560ae56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Boundary">
+      <UniqueIdentifier>{6d65b4e3-629f-45c9-9f40-7ef27e081834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Boundary\DX">
+      <UniqueIdentifier>{90cadf25-d35a-48a7-87d6-6403ff78b734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Boundary\DX\DX10">
+      <UniqueIdentifier>{4edacdcb-d643-4de0-ad65-a96efb6c718a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\Normals">
+      <UniqueIdentifier>{136fa1bf-4a61-47f9-a07e-4a74dd80065d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Light\Point">
+      <UniqueIdentifier>{1703dd3c-9345-41a9-bb0a-2d47e7a6a3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes">
+      <UniqueIdentifier>{6875e332-76e3-49d0-a6ff-6cc44bfbd9e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Sphere">
+      <UniqueIdentifier>{57d4e362-6816-4878-89f9-cac36e0562bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Base">
+      <UniqueIdentifier>{e84b5e91-097b-4b3f-84ce-300a1b593efd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Base\DX">
+      <UniqueIdentifier>{40748eb6-1ebc-4cc0-b098-27bd8dd6b5e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Base\DX\DX10">
+      <UniqueIdentifier>{b25b0315-6e54-4709-ba29-e954e845eff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Factory">
+      <UniqueIdentifier>{8b783dee-151a-407e-863c-e9463449548f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Builder">
+      <UniqueIdentifier>{e1d368cc-0948-4fd9-8f76-b466c56622f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\AABB">
+      <UniqueIdentifier>{79eb3c14-49ce-4afa-aee3-ff4e70e8aeeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\OBB">
+      <UniqueIdentifier>{f7f51967-69bc-49b3-b2a3-c5c99e2da83e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug\DebugShapes\Ellipse">
+      <UniqueIdentifier>{23984500-d1aa-4222-8e29-cf3fcc6fc59b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\dllmain.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gfxSystemDX.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\color.cpp">
+      <Filter>Source Files\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\meshManager.cpp">
+      <Filter>Source Files\Mesh\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\meshBuilder.cpp">
+      <Filter>Source Files\Mesh\Builder\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\meshBuilderOBJ.cpp">
+      <Filter>Source Files\Mesh\Builder\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderManager.cpp">
+      <Filter>Source Files\Shader\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cameraManager.cpp">
+      <Filter>Source Files\Camera\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderDefault.cpp">
+      <Filter>Source Files\Shader\Default</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cameraDX.cpp">
+      <Filter>Source Files\Camera\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pivotCamera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cameraFactory.cpp">
+      <Filter>Source Files\Camera\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\light.cpp">
+      <Filter>Source Files\Light\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lightManager.cpp">
+      <Filter>Source Files\Light\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gfxAPIDX10.cpp">
+      <Filter>Source Files\API\DX\DX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gfxAPIDX11.cpp">
+      <Filter>Source Files\API\DX\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\meshDX11.cpp">
+      <Filter>Source Files\Mesh\DX\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\meshDX10.cpp">
+      <Filter>Source Files\Mesh\DX\DX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderDX11.cpp">
+      <Filter>Source Files\Shader\Base\DX\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderDX10.cpp">
+      <Filter>Source Files\Shader\Base\DX\DX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderPhongDX11.cpp">
+      <Filter>Source Files\Shader\Phong\DX\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderPhongDX10.cpp">
+      <Filter>Source Files\Shader\Phong\DX\DX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderBoundaryDX10.cpp">
+      <Filter>Source Files\Shader\Boundary\DX\DX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\shaderNormals.cpp">
+      <Filter>Source Files\Shader\Normals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lightPoint.cpp">
+      <Filter>Source Files\Light\Point</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugShapeDX10.cpp">
+      <Filter>Source Files\Debug\DebugShapes\Base\DX\DX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\inc\debugShapeFactory.h">
+      <Filter>Source Files\Debug\DebugShapes\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugSphereDX10.cpp">
+      <Filter>Source Files\Debug\DebugShapes\Sphere</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugShapeFactory.cpp">
+      <Filter>Source Files\Debug\DebugShapes\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugShapeBuilder.cpp">
+      <Filter>Source Files\Debug\DebugShapes\Builder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\inc\debugAABB.h">
+      <Filter>Source Files\Debug\DebugShapes\AABB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugAABBDX10.cpp">
+      <Filter>Source Files\Debug\DebugShapes\AABB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugEllipseDX10.cpp">
+      <Filter>Source Files\Debug\DebugShapes\Ellipse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\debugOBBDX10.cpp">
+      <Filter>Source Files\Debug\DebugShapes\OBB</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\targetver.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\stdafx.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\configGraphicsDLL.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\gfxSystem.h">
+      <Filter>Source Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\gfxSystemDX.h">
+      <Filter>Source Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\color.h">
+      <Filter>Source Files\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\face.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\halfEdge.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\mesh.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\meshManager.h">
+      <Filter>Source Files\Mesh\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\meshBuilder.h">
+      <Filter>Source Files\Mesh\Builder\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\meshBuilderOBJ.h">
+      <Filter>Source Files\Mesh\Builder\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\gfxLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vertex.h">
+      <Filter>Source Files\Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderTypes.h">
+      <Filter>Source Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderFactory.h">
+      <Filter>Source Files\Shader\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderManager.h">
+      <Filter>Source Files\Shader\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shader.h">
+      <Filter>Source Files\Shader\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\cameraManager.h">
+      <Filter>Source Files\Camera\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\gfxAPI.h">
+      <Filter>Source Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderDefault.h">
+      <Filter>Source Files\Shader\Default</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\cameraDX.h">
+      <Filter>Source Files\Camera\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\camera.h">
+      <Filter>Source Files\Camera\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\cameraTypes.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\pivotCamera.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\cameraFactory.h">
+      <Filter>Source Files\Camera\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderPhong.h">
+      <Filter>Source Files\Shader\Phong</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\light.h">
+      <Filter>Source Files\Light\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\lightTypes.h">
+      <Filter>Source Files\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\lightManager.h">
+      <Filter>Source Files\Light\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\lightFactory.h">
+      <Filter>Source Files\Light\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\gfxAPIDX11.h">
+      <Filter>Source Files\API\DX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\gfxAPIDX10.h">
+      <Filter>Source Files\API\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\meshDX11.h">
+      <Filter>Source Files\Mesh\DX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\meshDX10.h">
+      <Filter>Source Files\Mesh\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderDX11.h">
+      <Filter>Source Files\Shader\Base\DX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderDX10.h">
+      <Filter>Source Files\Shader\Base\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderPhongDX10.h">
+      <Filter>Source Files\Shader\Phong\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderPhongDX11.h">
+      <Filter>Source Files\Shader\Phong\DX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderTable.h">
+      <Filter>Source Files\Shader\ShaderTable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vertexLayoutDX11.h">
+      <Filter>Source Files\Vertex\Layout\DX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vertexLayoutDX10.h">
+      <Filter>Source Files\Vertex\Layout\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\vertexLayout.h">
+      <Filter>Source Files\Vertex\Layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderTableDX10.h">
+      <Filter>Source Files\Shader\ShaderTable\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderTableDX11.h">
+      <Filter>Source Files\Shader\ShaderTable\DX\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\meshTypes.h">
+      <Filter>Source Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderBoundary.h">
+      <Filter>Source Files\Shader\Boundary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderBoundaryDX10.h">
+      <Filter>Source Files\Shader\Boundary\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\shaderNormals.h">
+      <Filter>Source Files\Shader\Normals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\lightPoint.h">
+      <Filter>Source Files\Light\Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugShape.h">
+      <Filter>Source Files\Debug\DebugShapes\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugShapeDX10.h">
+      <Filter>Source Files\Debug\DebugShapes\Base\DX\DX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugShapeTypes.h">
+      <Filter>Source Files\Debug\DebugShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugSphere.h">
+      <Filter>Source Files\Debug\DebugShapes\Sphere</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugShapeBuilder.h">
+      <Filter>Source Files\Debug\DebugShapes\Builder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugAABBDX10.h">
+      <Filter>Source Files\Debug\DebugShapes\AABB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugOBB.h">
+      <Filter>Source Files\Debug\DebugShapes\OBB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugOBBDX10.h">
+      <Filter>Source Files\Debug\DebugShapes\OBB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugEllipse.h">
+      <Filter>Source Files\Debug\DebugShapes\Ellipse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\debugEllipseDX10.h">
+      <Filter>Source Files\Debug\DebugShapes\Ellipse</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\inc\debugSphereDX10.h">
+      <Filter>Source Files\Debug\DebugShapes\Sphere</Filter>
+    </None>
+  </ItemGroup>
+</Project>

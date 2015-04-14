@@ -64,6 +64,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>QuarkEngine_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\bin\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,15 +86,18 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>QuarkEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\bin\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\tests\luaTest.cpp" />
     <ClCompile Include="..\src\tests\main.cpp" />
     <ClCompile Include="..\src\tests\mathTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\tests\luaTest.h" />
     <ClInclude Include="..\src\tests\mathTest.h" />
-    <ClInclude Include="..\src\tests\testerBase.h" />
     <ClInclude Include="..\src\tests\testCodes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

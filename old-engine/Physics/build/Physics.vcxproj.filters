@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{7241c092-a09e-4429-a55c-776e2fc5b930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BV">
+      <UniqueIdentifier>{c5a70540-30ed-40e5-8551-38b20f0fc34d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BV\AABB">
+      <UniqueIdentifier>{49e1e5d7-7088-4af7-bebc-ce1cac805b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BV\Base">
+      <UniqueIdentifier>{b3618746-54bf-431d-a767-d4fa55855397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BV\Sphere">
+      <UniqueIdentifier>{40d263cc-e3e3-4add-a489-7e51b5858451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{832c12ea-699a-461a-97ff-4168283070bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BV\OBB">
+      <UniqueIdentifier>{04607d4d-babb-4ca9-8d79-0fc34c7277e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BV\Ellipse">
+      <UniqueIdentifier>{cf9d5cd0-2c5b-4777-9ec4-33ebb9c92f56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\stdafx.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\targetver.h">
+      <Filter>Source Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\configPhysicsDLL.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingVolume.h">
+      <Filter>Source Files\BV\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingVolumeTypes.h">
+      <Filter>Source Files\BV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingVolumeFactory.h">
+      <Filter>Source Files\BV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingSphere.h">
+      <Filter>Source Files\BV\Sphere</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingAABB.h">
+      <Filter>Source Files\BV\AABB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\phyLogger.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingOBB.h">
+      <Filter>Source Files\BV\OBB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingEllipse.h">
+      <Filter>Source Files\BV\Ellipse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingVolumeTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\aabbTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\boundingSphereTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\dllmain.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Physics.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingSphere.cpp">
+      <Filter>Source Files\BV\Sphere</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingAABB.cpp">
+      <Filter>Source Files\BV\AABB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingVolume.cpp">
+      <Filter>Source Files\BV\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingOBB.cpp">
+      <Filter>Source Files\BV\OBB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingEllipse.cpp">
+      <Filter>Source Files\BV\Ellipse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingVolumeTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\aabbTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\boundingSphereTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ReadMe.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

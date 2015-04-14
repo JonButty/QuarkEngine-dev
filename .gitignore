@@ -1,2 +1,24 @@
+<<<<<<< HEAD
 *.sdf
 doc/html/
+=======
+bin/
+*.sdf
+*.log
+*.pch
+*.tlog
+*.lastbuildstate
+*.obj
+*.idb
+*.ipch
+*.suo
+*.opensdf
+build/QuarkEngineDebug/
+build/QuarkEngineRelease/
+build/QuarkTestDebug/
+build/QuarkTestRelease/
+build/ipch/
+doc/html/
+doc/latex/
+doc/QuarkEngine_Help.chm
+>>>>>>> engine-dev

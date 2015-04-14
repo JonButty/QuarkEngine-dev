@@ -1,0 +1,58 @@
+////////////////////////////////////////////////////////////////////////////////
+// Filename: light.ps
+////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////
+// GLOBALS //
+/////////////
+
+cbuffer LightBuffer
+{
+    float4 ambientColor;
+    float4 diffuseColor;
+    float3 lightDirection;
+    float specularPower;
+    float4 specularColor;
+};
+
+//////////////
+// TYPEDEFS //
+//////////////
+
+struct PixelInputType
+{
+    float4 position : SV_POSITION;
+	float4 color : COLOR;
+    float3 normal : NORMAL;
+    float3 viewDirection : TEXCOORD1;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Pixel Shader
+////////////////////////////////////////////////////////////////////////////////
+float4 main(PixelInputType input) : SV_TARGET
+{
+	input.normal = normalize(input.normal);
+	input.viewDirection = normalize(input.viewDirection);
+	float3 lightDir = normalize(lightDirection);
+	
+	float lDotN = max(0.0,dot(lightDir,input.normal));
+	float3 diffuse;
+	diffuse.xyz = lDotN * diffuseColor.xyz;
+	
+	float3 ambient;
+	ambient.xyz = ambientColor.xyz * diffuseColor.xyz;
+	
+	float3 r = 2 * (dot(lightDir,input.normal) * input.normal) - lightDir;
+	r = normalize(r);
+	
+	float3 specular;
+	specular = lDotN * specularColor.xyz * pow(max(0.0,dot(r,input.viewDirection)),specularPower);
+	
+    float4 color;
+	color.xyz = ambient.xyz + diffuse.xyz + specular.xyz;
+	color.w = 1;
+	
+    return color;
+}
