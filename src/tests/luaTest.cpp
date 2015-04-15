@@ -3,12 +3,12 @@
 
 #define TEST_FILE "data/test/luaTest.lua"
 
-QE_BOOL LuaTest::Test()
-{
-    QE_BOOL result = true;
-    result = testLoadFile_() ? result : false;
-    return result;
-}
+//QE_BOOL LuaTest::Test()
+//{
+//    QE_BOOL result = true;
+//    result = testLoadFile_() ? result : false;
+//    return result;
+//}
 
 /*!*****************************************************************************
 
@@ -18,11 +18,11 @@ QE_BOOL LuaTest::Test()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetBool_()
-{
-    //QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript(TEST_FILE);
-    return true;
-}
+//QE_BOOL LuaTest::testGetBool_()
+//{
+//    //QEScriptObject* scriptObj = QEScriptManager::InstancePtr()->LoadScript(TEST_FILE);
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -32,10 +32,10 @@ QE_BOOL LuaTest::testGetBool_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInt_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInt_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -45,10 +45,10 @@ QE_BOOL LuaTest::testGetInt_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetFloat_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetFloat_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -58,10 +58,10 @@ QE_BOOL LuaTest::testGetFloat_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetString_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetString_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -71,10 +71,10 @@ QE_BOOL LuaTest::testGetString_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidNameBool_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidNameBool_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -84,10 +84,10 @@ QE_BOOL LuaTest::testGetInvalidNameBool_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidNameInt_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidNameInt_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -97,10 +97,10 @@ QE_BOOL LuaTest::testGetInvalidNameInt_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidNameFloat_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidNameFloat_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -110,10 +110,10 @@ QE_BOOL LuaTest::testGetInvalidNameFloat_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidNameString_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidNameString_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -123,10 +123,10 @@ QE_BOOL LuaTest::testGetInvalidNameString_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidTypeBool_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidTypeBool_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -136,10 +136,10 @@ QE_BOOL LuaTest::testGetInvalidTypeBool_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidTypeInt_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidTypeInt_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -149,10 +149,10 @@ QE_BOOL LuaTest::testGetInvalidTypeInt_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidTypeFloat_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidTypeFloat_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -162,10 +162,10 @@ QE_BOOL LuaTest::testGetInvalidTypeFloat_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testGetInvalidTypeString_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testGetInvalidTypeString_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -175,14 +175,14 @@ QE_BOOL LuaTest::testGetInvalidTypeString_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testLoadFile_()
-{
-    QEScriptObject* scriptObj;
-    if(!QEScriptManager::InstancePtr()->LoadScript(scriptObj,TEST_FILE))
-        return false;
-    QEScriptManager::InstancePtr()->UnloadScript(scriptObj);
-    return true;
-}
+//QE_BOOL LuaTest::testLoadFile_()
+//{
+//    QEScriptObject* scriptObj;
+//    if(!QEScriptManager::InstancePtr()->LoadScript(scriptObj,TEST_FILE))
+//        return false;
+//    QEScriptManager::InstancePtr()->UnloadScript(scriptObj);
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -192,13 +192,13 @@ QE_BOOL LuaTest::testLoadFile_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testLoadInvalidFile_()
-{
-    QEScriptObject* scriptObj;
-    if(QEScriptManager::InstancePtr()->LoadScript(scriptObj,"foo.lua"))
-        return false;
-    return true;
-}
+//QE_BOOL LuaTest::testLoadInvalidFile_()
+//{
+//    QEScriptObject* scriptObj;
+//    if(QEScriptManager::InstancePtr()->LoadScript(scriptObj,"foo.lua"))
+//        return false;
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -208,10 +208,10 @@ QE_BOOL LuaTest::testLoadInvalidFile_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testReloadInvalidFile_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testReloadInvalidFile_()
+//{
+//    return true;
+//}
 
 /*!*****************************************************************************
 
@@ -221,7 +221,7 @@ QE_BOOL LuaTest::testReloadInvalidFile_()
 \brief
 
 *******************************************************************************/
-QE_BOOL LuaTest::testMultipleReferences_()
-{
-    return true;
-}
+//QE_BOOL LuaTest::testMultipleReferences_()
+//{
+//    return true;
+//}

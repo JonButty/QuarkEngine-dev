@@ -18,8 +18,9 @@ int main(int argc, char ** argv)
 {
     QELogManager::InstancePtr()->Load();
     QEScriptManager::InstancePtr()->Load();
-
-    QE_LOGV("test log");
+    
+    ::testing::InitGoogleTest(&argc,argv);
+    return RUN_ALL_TESTS();
 
     /*
     if(argc == 1)
@@ -32,7 +33,6 @@ int main(int argc, char ** argv)
         return 0;
     }
     */
-    LuaTest::Test();
 
     // QETest [Test Name]
     //if(argc == 2)

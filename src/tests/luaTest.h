@@ -2,28 +2,38 @@
 #define LUATEST_H
 
 #include "stdafx.h"
+#include "gtest/gtest.h"
 
-class LuaTest
+class LuaTest : public ::testing::Test
 {
-public:
-    static QE_BOOL Test();
+protected:
+
+    LuaTest();
+    virtual ~LuaTest();
+    
+protected:
+
+    void SetUp();
+    void TearDown();
+    /*
 private:
-    static QE_BOOL testGetBool_();
-    static QE_BOOL testGetInt_();
-    static QE_BOOL testGetFloat_();
-    static QE_BOOL testGetString_();
-    static QE_BOOL testGetInvalidNameBool_();
-    static QE_BOOL testGetInvalidNameInt_();
-    static QE_BOOL testGetInvalidNameFloat_();
-    static QE_BOOL testGetInvalidNameString_();
-    static QE_BOOL testGetInvalidTypeBool_();
-    static QE_BOOL testGetInvalidTypeInt_();
-    static QE_BOOL testGetInvalidTypeFloat_();
-    static QE_BOOL testGetInvalidTypeString_();
-    static QE_BOOL testLoadFile_();
-    static QE_BOOL testLoadInvalidFile_();
-    static QE_BOOL testReloadInvalidFile_();
-    static QE_BOOL testMultipleReferences_();
+    QE_BOOL testGetBool_();
+    QE_BOOL testGetInt_();
+    QE_BOOL testGetFloat_();
+    QE_BOOL testGetString_();
+    QE_BOOL testGetInvalidNameBool_();
+    QE_BOOL testGetInvalidNameInt_();
+    QE_BOOL testGetInvalidNameFloat_();
+    QE_BOOL testGetInvalidNameString_();
+    QE_BOOL testGetInvalidTypeBool_();
+    QE_BOOL testGetInvalidTypeInt_();
+    QE_BOOL testGetInvalidTypeFloat_();
+    QE_BOOL testGetInvalidTypeString_();
+    QE_BOOL testLoadFile_();
+    QE_BOOL testLoadInvalidFile_();
+    QE_BOOL testReloadInvalidFile_();
+    QE_BOOL testMultipleReferences_();
+    */
 };
 
 #endif

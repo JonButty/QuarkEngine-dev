@@ -106,6 +106,7 @@
       </ForcedIncludeFiles>
       <ShowIncludes>false</ShowIncludes>
       <EnablePREfast>true</EnablePREfast>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,6 +139,7 @@
       </ForcedIncludeFiles>
       <ShowIncludes>false</ShowIncludes>
       <EnablePREfast>true</EnablePREfast>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
