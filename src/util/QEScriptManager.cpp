@@ -108,18 +108,16 @@ QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& obj,
     {
         ++it->second.refCount_;
         scriptLangTable_[index]->LoadScript(it->second.obj_);
-        scriptLangTable_[index]->ErrorCheck(it->second.obj_);
         obj = it->second.obj_;
-        return true;
+        return scriptLangTable_[index]->ErrorCheck(it->second.obj_);
     }
     else
     {
         QEScriptObject* scriptObj = scriptLangTable_[index]->LoadScript(filePath);
         ScriptObjectMeta meta = {index,1,scriptObj};
         filePathScriptObjectMap_.insert(std::pair<FilePath,ScriptObjectMeta>(filePath,meta));
-        scriptLangTable_[index]->ErrorCheck(scriptObj);
         obj = scriptObj;
-        return true;
+        return scriptLangTable_[index]->ErrorCheck(scriptObj);
     }
 }
 

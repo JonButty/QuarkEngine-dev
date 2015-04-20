@@ -194,7 +194,7 @@ QE_API QE_BOOL QELuaScript::GetBool(QE_IN QEScriptObject*& scriptObj,
         return false;
     }
 
-    if(lRef.isFunction() || lRef.isLightUserdata() || lRef.isNumber() ||
+    if(lRef.isFunction() || lRef.isLightUserdata() ||
        lRef.isString() || lRef.isTable() || lRef.isThread() || lRef.isUserdata())
     {
         scriptObj->status_ = QEScriptObject::S_INVALID_VAR_TYPE;

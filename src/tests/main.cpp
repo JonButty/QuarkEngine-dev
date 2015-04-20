@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "mathTest.h"
-#include "luaTest.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 #include <iostream>
 #include <fstream>

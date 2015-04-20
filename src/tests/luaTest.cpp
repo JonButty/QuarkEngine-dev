@@ -1,7 +1,15 @@
 #include "stdafx.h"
 #include "luaTest.h"
 
-#define TEST_FILE "data/test/luaTest.lua"
+#include <fstream>
+
+#define TEST_FILEPATH   "data/test/luaTest.lua"
+#define TEST_STRING_VAR "testString"
+#define TEST_STRING_VAL "LuaBridge works!"
+#define TEST_INT_VAR    "testNumber"
+#define TEST_INT_VAL    42
+#define TEST_BOOL_VAR   "testBool"
+#define TEST_BOOL_VAL   true
 
 //QE_BOOL LuaTest::Test()
 //{
@@ -225,3 +233,95 @@
 //{
 //    return true;
 //}
+
+/*!*****************************************************************************
+
+\name   LuaTest
+\return
+
+\brief
+
+*******************************************************************************/
+LuaTest::LuaTest()
+{
+    QEScriptManager::InstancePtr()->Load();
+    CreateLuaFile();
+}
+
+/*!*****************************************************************************
+
+\name   ~LuaTest
+\return
+
+\brief
+
+*******************************************************************************/
+LuaTest::~LuaTest()
+{
+    QEScriptManager::InstancePtr()->Unload();
+}
+
+/*!*****************************************************************************
+
+\name   SetUp
+\return void
+
+\brief
+
+*******************************************************************************/
+void LuaTest::SetUp()
+{
+    scriptObj_ = 0;
+}
+
+/*!*****************************************************************************
+
+\name   TearDown
+\return void
+
+\brief
+
+*******************************************************************************/
+void LuaTest::TearDown()
+{
+    QEScriptManager::InstancePtr()->UnloadScript(scriptObj_);
+}
+
+/*!*****************************************************************************
+
+\name   CreateLuaFile
+\return void
+
+\brief
+
+*******************************************************************************/
+void LuaTest::CreateLuaFile()
+{
+    std::ofstream file(TEST_FILEPATH);
+
+    file << TEST_STRING_VAR << "=\"" << TEST_STRING_VAL       << "\"\n";
+    file << TEST_INT_VAR    << "="   << TEST_INT_VAL          << "\n";
+    file << TEST_BOOL_VAR   << "="   << bool(TEST_BOOL_VAL)   << "\n";
+
+    file.close();
+}
+
+TEST_F(LuaTest,LoadScriptFile)
+{
+    EXPECT_TRUE(QEScriptManager::InstancePtr()->LoadScript(scriptObj_,TEST_FILEPATH));
+}
+
+TEST_F(LuaTest,LoadInvalidScriptFile)
+{
+    EXPECT_FALSE(QEScriptManager::InstancePtr()->LoadScript(scriptObj_,"foo.lua"));
+}
+
+TEST_F(LuaTest,GetTypeBool)
+{ 
+    EXPECT_TRUE(QEScriptManager::InstancePtr()->LoadScript(scriptObj_,TEST_FILEPATH));
+    
+    bool val = false;
+    QEScriptManager::InstancePtr()->GetBool(scriptObj_,TEST_BOOL_VAR,&val);
+    
+    EXPECT_EQ(TEST_BOOL_VAL,val);
+}
