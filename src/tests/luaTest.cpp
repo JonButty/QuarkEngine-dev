@@ -299,9 +299,9 @@ void LuaTest::CreateLuaFile()
 {
     std::ofstream file(TEST_FILEPATH);
 
-    file << TEST_STRING_VAR << "=\"" << TEST_STRING_VAL       << "\"\n";
-    file << TEST_INT_VAR    << "="   << TEST_INT_VAL          << "\n";
-    file << TEST_BOOL_VAR   << "="   << bool(TEST_BOOL_VAL)   << "\n";
+    file << TEST_STRING_VAR << "=\"" << TEST_STRING_VAL << "\"\n";
+    file << TEST_INT_VAR    << "="   << TEST_INT_VAL    << "\n";
+    file << TEST_BOOL_VAR   << "="   << TEST_BOOL_VAL   << "\n";
 
     file.close();
 }
