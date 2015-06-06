@@ -16,8 +16,9 @@
 */
 int main(int argc, char ** argv)
 {
-    QELogManager::InstancePtr()->Load();
-    QEScriptManager::InstancePtr()->Load();
+    QEBootstrapper::InstancePtr()->Load(argc,argv);
+    //QELogManager::InstancePtr()->Load();
+    //QEScriptManager::InstancePtr()->Load();
     
     ::testing::InitGoogleTest(&argc,argv);
     return RUN_ALL_TESTS();

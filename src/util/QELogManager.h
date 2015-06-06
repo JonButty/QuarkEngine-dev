@@ -12,7 +12,7 @@
 
 #include "common/QEDefines.h"
 #include "common/QETypes.h"
-#include "QEManager.h"
+#include "QEModule.h"
 
 #include <string>
 #include <vector>
@@ -21,7 +21,7 @@
 
 class QELogger;
 
-class QELogManager : public QEManager<QELogManager>
+class QELogManager : public QEModule
 {
 public:
 
@@ -35,18 +35,18 @@ public:
 
 public:
 
-    QE_API QELogManager();
-    QE_API ~QELogManager();
+    QELogManager();
+    ~QELogManager();
 
 public:
 
-    QE_API QE_INT Load();
-    QE_API QE_INT Unload();
-    QE_API void Log(QE_IN const std::string& filePath,
+    QE_INT Load();
+    QE_INT Unload();
+    void Log(QE_IN const std::string& filePath,
                     QE_IN QE_UINT lineNumber,
                     QE_IN const std::string& msg,
                     QE_IN QE_UINT level);
-    QE_API void SetFilter(QE_IN_OPT const std::vector<std::string>* filterList);
+    void SetFilter(QE_IN_OPT const std::vector<std::string>* filterList);
     
 private:
 

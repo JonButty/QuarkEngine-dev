@@ -22,6 +22,33 @@
     <Filter Include="math\interpolate">
       <UniqueIdentifier>{c2c0027e-ca2a-4974-8423-9026a10397fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="util\File System">
+      <UniqueIdentifier>{c60ed8c2-ab84-4173-92f7-f56e19f206f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Logging">
+      <UniqueIdentifier>{3ef65713-34e6-4714-8a8b-91002d2b6371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Logging\Logger">
+      <UniqueIdentifier>{3e2f7ca3-a574-4a5f-acc8-193a77d3378e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Logging\Logger\Console">
+      <UniqueIdentifier>{a0e870f1-9eae-487a-87ac-33992dc4756e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Scripting">
+      <UniqueIdentifier>{529e47c1-5f3e-4a76-aab5-5172f2af00cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Scripting\Script">
+      <UniqueIdentifier>{0c2440af-56c5-42c3-a2f8-2578b6d3fdce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Scripting\Script\Lua">
+      <UniqueIdentifier>{93e2e535-7d4d-4f3b-bd81-cc60b8dc38c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Scripting\Script Object">
+      <UniqueIdentifier>{6b3907a7-808c-4647-93ad-f05f7f585be6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util\Scripting\Script Object\Lua">
+      <UniqueIdentifier>{ef8e0fa2-16f9-4129-a0aa-ae5b8fa3d9ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\src\common\ReadMe.txt">
@@ -29,24 +56,32 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\util\QEFileSystem.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\util\QELuaScript.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp" />
     <ClCompile Include="..\src\util\QEConsoleLogger.cpp">
-      <Filter>util</Filter>
+      <Filter>util\Logging\Logger\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\QEFileSystem.cpp">
+      <Filter>util\File System</Filter>
     </ClCompile>
     <ClCompile Include="..\src\util\QELogger.cpp">
-      <Filter>util</Filter>
+      <Filter>util\Logging\Logger</Filter>
     </ClCompile>
     <ClCompile Include="..\src\util\QELogManager.cpp">
-      <Filter>util</Filter>
+      <Filter>util\Logging</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\stdafx.cpp" />
-    <ClCompile Include="..\src\util\QEScript.cpp" />
-    <ClCompile Include="..\src\util\QEScriptManager.cpp" />
+    <ClCompile Include="..\src\util\QELuaScript.cpp">
+      <Filter>util\Scripting\Script\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\QEScript.cpp">
+      <Filter>util\Scripting\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\util\QEScriptManager.cpp">
+      <Filter>util\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\QEModuleManager.cpp" />
+    <ClCompile Include="..\src\core\QEBootstraper.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\math\QEAngle.h">
@@ -67,28 +102,7 @@
     <ClInclude Include="..\src\math\QEVector4.h">
       <Filter>math\vector</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\QEFileSystem.h">
-      <Filter>util</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\util\QESingleton.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\util\QEScriptManager.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\util\QELuaScript.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\util\QELuaScriptObject.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\util\QEScript.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\util\QEScriptObject.h">
-      <Filter>util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\util\QELogger.h">
       <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="..\src\common\QEDefines.h">
@@ -100,18 +114,48 @@
     <ClInclude Include="..\src\common\QETypes.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\stdafx.h" />
     <ClInclude Include="..\src\util\QEConsoleLogger.h">
-      <Filter>util</Filter>
+      <Filter>util\Logging\Logger\Console</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\QELog.h">
-      <Filter>util</Filter>
+    <ClInclude Include="..\src\util\QEFileSystem.h">
+      <Filter>util\File System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QELogger.h">
+      <Filter>util\Logging\Logger</Filter>
     </ClInclude>
     <ClInclude Include="..\src\util\QELogManager.h">
+      <Filter>util\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QELog.h">
+      <Filter>util\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QELuaScript.h">
+      <Filter>util\Scripting\Script\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QELuaScriptObject.h">
+      <Filter>util\Scripting\Script Object\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEScriptObject.h">
+      <Filter>util\Scripting\Script Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEScriptManager.h">
+      <Filter>util\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEScript.h">
+      <Filter>util\Scripting\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\QEBootstraper.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\util\QEModule.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\util\QEManager.h">
-      <Filter>util</Filter>
+    <ClInclude Include="..\src\common\modules.h">
+      <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\stdafx.h" />
+    <ClInclude Include="..\src\core\QEModuleManager.h">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

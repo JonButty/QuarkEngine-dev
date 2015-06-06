@@ -9,29 +9,31 @@
 #ifndef QELOG_H
 #define QELOG_H
 
-#include "QELogManager.h"
+#include "util/QELogManager.h"
+#include "common/QEDefines.h"
 
 #include <sstream>
+#include <string>
 
 #define QE_LOGV(msg)\
 {\
     std::stringstream ss;\
     ss << msg << '\0';\
-    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_VERBOSE);\
+    QE_GET_MODULE(QELogManager)->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_VERBOSE);\
 }
 
 #define QE_LOGW(msg)\
 {\
-    std::stringstream ss;\
+    /*std::stringstream ss;\
     ss << msg << '\0';\
-    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_WARNING);\
+    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_WARNING);*/\
 }
 
 #define QE_LOGE(msg)\
 {\
-    std::stringstream ss;\
+    /*std::stringstream ss;\
     ss << msg << '\0';\
-    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_ERROR);\
+    QELogManager::InstancePtr()->Log(__FILE__,__LINE__,ss.str(),QELogManager::L_ERROR);*/\
 }
 
 #endif

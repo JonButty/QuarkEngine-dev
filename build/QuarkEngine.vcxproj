@@ -14,6 +14,8 @@
     <Text Include="..\src\common\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\core\QEBootstraper.cpp" />
+    <ClCompile Include="..\src\core\QEModuleManager.cpp" />
     <ClCompile Include="..\src\stdafx.cpp" />
     <ClCompile Include="..\src\util\QEConsoleLogger.cpp" />
     <ClCompile Include="..\src\util\QEFileSystem.cpp" />
@@ -24,8 +26,11 @@
     <ClCompile Include="..\src\util\QEScriptManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\common\modules.h" />
     <ClInclude Include="..\src\common\QEDefines.h" />
     <ClInclude Include="..\src\common\QETypes.h" />
+    <ClInclude Include="..\src\core\QEBootstraper.h" />
+    <ClInclude Include="..\src\core\QEModuleManager.h" />
     <ClInclude Include="..\src\math\QEInterpolate.h" />
     <ClInclude Include="..\src\math\QEAngle.h" />
     <ClInclude Include="..\src\math\QEQuaternion.h" />
@@ -41,7 +46,7 @@
     <ClInclude Include="..\src\util\QELogManager.h" />
     <ClInclude Include="..\src\util\QELuaScript.h" />
     <ClInclude Include="..\src\util\QELuaScriptObject.h" />
-    <ClInclude Include="..\src\util\QEManager.h" />
+    <ClInclude Include="..\src\util\QEModule.h" />
     <ClInclude Include="..\src\util\QEScript.h" />
     <ClInclude Include="..\src\util\QEScriptManager.h" />
     <ClInclude Include="..\src\util\QEScriptObject.h" />
