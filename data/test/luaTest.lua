@@ -1,3 +1,3 @@
-testString = "LuaBridge works!"
-testNumber = 42
-testBool = true
+testString="LuaBridge works!"
+testNumber=42
+testBool=1
