@@ -1,57 +1,56 @@
 /*!*****************************************************************************
 
-\class 	QEManager
+\class 	QEModule
 \date 	2015/03/28
 \author	Jonathan Butt
 \brief	
 \todo automatically register itself to system loader
 
 *******************************************************************************/
-#ifndef QEMANAGER_H
-#define QEMANAGER_H
+#ifndef QEMODULE_H
+#define QEMODULE_H
 
 #include "common/QEDefines.h"
 #include "common/QETypes.h"
-#include "QESingleton.h"
+#include "core/QEModuleManager.h"
 
 #include <string>
 
-template <typename T>
-class QEManager : public QESingleton<T>
+class QEModule
 {
 public:
 
-    QE_API QEManager()
+    QEModule()
     {
     }
 
-    QE_API virtual ~QEManager()
+    virtual ~QEModule()
     {
     }
 
 public:
 
-    QE_API virtual int Load()
+    virtual int Load()
     {
         return 0;
     }
 
-    QE_API virtual int Initialize()
+    virtual int Initialize()
     {
         return 0;
     }
 
-    QE_API virtual int Update()
+    virtual int Update()
     {
         return 0;
     }
 
-    QE_API virtual int Deinitialize()
+    virtual int Deinitialize()
     {
         return 0;
     }
 
-    QE_API virtual int Unload()
+    virtual int Unload()
     {
         return 0;
     }
