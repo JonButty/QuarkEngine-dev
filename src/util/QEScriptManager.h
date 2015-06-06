@@ -16,8 +16,7 @@
 #ifndef QESCRIPTMANAGER_H
 #define QESCRIPTMANAGER_H
 
-#include "QEManager.h"
-#include "QEManager.h"
+#include "QEModule.h"
 #include "QEScriptObject.h"
 #include "QEScript.h"
 
@@ -26,31 +25,31 @@
 
 class QEScript;
 
-class QEScriptManager : public QEManager<QEScriptManager>
+class QEScriptManager : public QEModule//<QEScriptManager>
 {
 public:
 
-    QE_API QEScriptManager();
-    QE_API virtual ~QEScriptManager();
+    QEScriptManager();
+    virtual ~QEScriptManager();
 
 public:
 
-    QE_API QE_INT Load();
-    QE_API QE_INT Unload();
-    QE_API QE_BOOL LoadScript(QE_IN_OUT QEScriptObject*& obj,
+    QE_INT Load();
+    QE_INT Unload();
+    QE_BOOL LoadScript(QE_IN_OUT QEScriptObject*& obj,
                               QE_IN const std::string& filePath);
-    QE_API QE_BOOL LoadScript(QE_IN_OUT QEScriptObject*& scriptObj);
-    QE_API void UnloadScript(QE_IN QEScriptObject*& scriptObj);
-    QE_API QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
+    QE_BOOL LoadScript(QE_IN_OUT QEScriptObject*& scriptObj);
+    void UnloadScript(QE_IN QEScriptObject*& scriptObj);
+    QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
                            QE_IN const std::string& varName,
                            QE_OUT QE_BOOL* var);
-    QE_API QE_BOOL GetInt(QE_IN QEScriptObject*& scriptObj,
+    QE_BOOL GetInt(QE_IN QEScriptObject*& scriptObj,
                           QE_IN const std::string& varName,
                           QE_OUT QE_INT* var);
-    QE_API QE_BOOL GetFloat(QE_IN QEScriptObject*& scriptObj,
+    QE_BOOL GetFloat(QE_IN QEScriptObject*& scriptObj,
                             QE_IN const std::string& varName,
                             QE_OUT QE_FLOAT* var);
-    QE_API QE_BOOL GetString(QE_IN QEScriptObject*& scriptObj,
+    QE_BOOL GetString(QE_IN QEScriptObject*& scriptObj,
                              QE_IN const std::string& varName,
                              QE_OUT std::string* var);
 
@@ -85,7 +84,7 @@ private:
         }
 
         // Script was not loaded
-        QE_LOGE(scriptObj->filePath_ << " was not loaded before.");
+        //QE_LOGE(scriptObj->filePath_ << " was not loaded before.");
         return false;
     }
 

@@ -34,12 +34,12 @@ QEScriptManager::~QEScriptManager()
 /*!*****************************************************************************
 
 \name   Load
-\return QE_API QE_INT
+\return QE_INT
 
 \brief
 
 *******************************************************************************/
-QE_API QE_INT QEScriptManager::Load()
+QE_INT QEScriptManager::Load()
 {
     QE_INT returnCode = 0;
 
@@ -53,12 +53,12 @@ QE_API QE_INT QEScriptManager::Load()
 /*!*****************************************************************************
 
 \name   Unload
-\return QE_API QE_INT
+\return QE_INT
 
 \brief
 
 *******************************************************************************/
-QE_API QE_INT QEScriptManager::Unload()
+QE_INT QEScriptManager::Unload()
 {
     // Unload all script objects first
     FilePathScriptObjectMap::iterator it = filePathScriptObjectMap_.begin();
@@ -83,12 +83,12 @@ QE_API QE_INT QEScriptManager::Unload()
 \name   LoadScript
 \param	QE_IN_OUT QEScriptObject *& obj
 \param	QE_IN const std::string & filePath
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& obj,
+QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& obj,
                                            QE_IN const std::string& filePath)
 {
     QE_LOGV("Loading script " << filePath);
@@ -127,12 +127,12 @@ QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& obj,
 
 \name   LoadScript
 \param	QE_IN QEScriptObject * scriptObj
-\return QE_API QEScriptObject*
+\return QEScriptObject*
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& scriptObj)
+QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& scriptObj)
 {
     QE_INT index = checkSupported_(scriptObj->filePath_);
     if(index < 0)
@@ -163,12 +163,12 @@ QE_API QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& scriptObj)
 
 \name   UnloadScript
 \param	QE_IN QEScriptObject * & scriptObj
-\return QE_API void
+\return void
 
 \brief
 
 *******************************************************************************/
-QE_API void QEScriptManager::UnloadScript(QE_IN QEScriptObject*& scriptObj)
+void QEScriptManager::UnloadScript(QE_IN QEScriptObject*& scriptObj)
 {
     QE_LOGV("Unloading script " << scriptObj->filePath_);
 
@@ -201,12 +201,12 @@ QE_API void QEScriptManager::UnloadScript(QE_IN QEScriptObject*& scriptObj)
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT QE_BOOL * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QEScriptManager::GetBool(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QEScriptManager::GetBool(QE_IN QEScriptObject*& scriptObj,
                                         QE_IN const std::string& varName,
                                         QE_OUT QE_BOOL* var)
 {
@@ -219,12 +219,12 @@ QE_API QE_BOOL QEScriptManager::GetBool(QE_IN QEScriptObject*& scriptObj,
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT QE_INT * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QEScriptManager::GetInt(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QEScriptManager::GetInt(QE_IN QEScriptObject*& scriptObj,
                                        QE_IN const std::string& varName,
                                        QE_OUT QE_INT* var)
 {
@@ -237,12 +237,12 @@ QE_API QE_BOOL QEScriptManager::GetInt(QE_IN QEScriptObject*& scriptObj,
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT QE_FLOAT * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QEScriptManager::GetFloat(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QEScriptManager::GetFloat(QE_IN QEScriptObject*& scriptObj,
                                          QE_IN const std::string& varName,
                                          QE_OUT QE_FLOAT* var)
 {
@@ -255,12 +255,12 @@ QE_API QE_BOOL QEScriptManager::GetFloat(QE_IN QEScriptObject*& scriptObj,
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT std::string * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QEScriptManager::GetString(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QEScriptManager::GetString(QE_IN QEScriptObject*& scriptObj,
                                           QE_IN const std::string& varName,
                                           QE_OUT std::string* var)
 {

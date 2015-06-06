@@ -10,7 +10,7 @@
 \brief
 
 *******************************************************************************/
-QE_API QEScript::QEScript(QE_IN const std::string& ext)
+QEScript::QEScript(QE_IN const std::string& ext)
     :   ext_(ext)
 {
 }
@@ -21,19 +21,19 @@ QE_API QEScript::QEScript(QE_IN const std::string& ext)
 \brief
 
 *******************************************************************************/
-QE_API QEScript::~QEScript()
+QEScript::~QEScript()
 {
 }
 
 /*!*****************************************************************************
 
 \name   GetExtension
-\return QE_API const std::string&
+\return const std::string&
 
 \brief
 
 *******************************************************************************/
-QE_API const std::string& QEScript::GetExtension() const
+const std::string& QEScript::GetExtension() const
 {
     return ext_;
 }
@@ -46,7 +46,7 @@ QE_API const std::string& QEScript::GetExtension() const
 \brief
 
 *******************************************************************************/
-QE_API QE_INT QEScript::Load()
+QE_INT QEScript::Load()
 {
     return 0;
 }
@@ -59,7 +59,7 @@ QE_API QE_INT QEScript::Load()
 \brief
 
 *******************************************************************************/
-QE_API QE_INT QEScript::Unload()
+QE_INT QEScript::Unload()
 {
     return 0;
 }
@@ -69,12 +69,12 @@ QE_API QE_INT QEScript::Unload()
 \name   RunScript
 \param	QE_IN_OPT QEScriptObject * scriptObj
 \param	QE_IN const std::string & filePath
-\return QE_API QEScriptObject*
+\return QEScriptObject*
 
 \brief
 
 *******************************************************************************/
-QE_API QEScriptObject* QEScript::RunScript(QE_IN_OPT QEScriptObject* scriptObj,
+QEScriptObject* QEScript::RunScript(QE_IN_OPT QEScriptObject* scriptObj,
                                            QE_IN const std::string& filePath)
 {
     return 0;

@@ -17,14 +17,14 @@ class QELogger
 {
 public:
     
-    QE_API QELogger();
-    QE_API virtual ~QELogger();
+    QELogger();
+    virtual ~QELogger();
 
 public:
 
-    QE_API virtual void Load() ;
-    QE_API virtual void Unload();
-    QE_API virtual void Log(const std::string& str) = 0;
+    virtual void Load() ;
+    virtual void Unload();
+    virtual void Log(const std::string& str) = 0;
 
 };
 

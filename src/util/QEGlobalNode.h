@@ -9,27 +9,25 @@
 #ifndef QEGLOBALNODE_H
 #define QEGLOBALNODE_H
 
-#include "common/QEDefines.h"
-
 template <typename T>
 class QEGlobalNode
 {
 public:
 
-    QE_API QEGlobalNode()
+    QEGlobalNode()
     {
         next_ = Head();
-        Head() = this;
+        Head() = reinterpret_cast<T*>(this);
     }
 
 public:
 
-    QE_API T* Next() const
+    T* Next() const
     {
         return next_;
     }
 
-    QE_API static T*& Head()
+    static T*& Head()
     {
         static T* head = 0;
         return head;

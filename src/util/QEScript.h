@@ -24,36 +24,36 @@ class QEScript
 {
 public:
 
-    QE_API QEScript(QE_IN const std::string& ext);
-    QE_API virtual ~QEScript();
+    QEScript(QE_IN const std::string& ext);
+    virtual ~QEScript();
 
 public:
 
-    QE_API const std::string& GetExtension() const;
+    const std::string& GetExtension() const;
 
 public:
 
-    QE_API virtual QE_INT Load();
-    QE_API virtual QE_INT Unload();
-    QE_API virtual QEScriptObject* LoadScript(QE_IN QEScriptObject*& scriptObj) = 0;
-    QE_API virtual QEScriptObject* LoadScript(QE_IN const std::string& filePath) = 0;
-    QE_API virtual void UnloadScript(QE_IN QEScriptObject*& scriptObj) = 0;
-    QE_API virtual QEScriptObject* RunScript(QE_IN_OPT QEScriptObject* scriptObj, 
+    virtual QE_INT Load();
+    virtual QE_INT Unload();
+    virtual QEScriptObject* LoadScript(QE_IN QEScriptObject*& scriptObj) = 0;
+    virtual QEScriptObject* LoadScript(QE_IN const std::string& filePath) = 0;
+    virtual void UnloadScript(QE_IN QEScriptObject*& scriptObj) = 0;
+    virtual QEScriptObject* RunScript(QE_IN_OPT QEScriptObject* scriptObj, 
                                              QE_IN const std::string& filePath);
-    QE_API virtual QE_BOOL ErrorCheck(QE_IN_OPT QEScriptObject*& scriptObj) = 0;
-    QE_API virtual QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
+    virtual QE_BOOL ErrorCheck(QE_IN_OPT QEScriptObject*& scriptObj) = 0;
+    virtual QE_BOOL GetBool(QE_IN QEScriptObject*& scriptObj,
                                    QE_IN const std::string& varName,
                                    QE_OUT QE_BOOL* var) = 0;
-    QE_API virtual QE_BOOL GetInt(QE_IN QEScriptObject*& scriptObj,
+    virtual QE_BOOL GetInt(QE_IN QEScriptObject*& scriptObj,
                                   QE_IN const std::string& varName,
                                   QE_OUT QE_INT* var) = 0;
-    QE_API virtual QE_BOOL GetFloat(QE_IN QEScriptObject*& scriptObj,
+    virtual QE_BOOL GetFloat(QE_IN QEScriptObject*& scriptObj,
                                     QE_IN const std::string& varName,
                                     QE_OUT QE_FLOAT* var) = 0;
-    QE_API virtual QE_BOOL GetString(QE_IN QEScriptObject*& scriptObj,
+    virtual QE_BOOL GetString(QE_IN QEScriptObject*& scriptObj,
                                      QE_IN const std::string& varName,
                                      QE_OUT std::string* var) = 0;
-    //QE_API virtual QE_DOUBLE GetTable(QE_IN QEScriptObject*& scriptObj,
+    //virtual QE_DOUBLE GetTable(QE_IN QEScriptObject*& scriptObj,
     //                                  QE_IN const std::string& varName) = 0;
 private:
 

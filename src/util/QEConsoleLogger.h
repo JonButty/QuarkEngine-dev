@@ -16,13 +16,13 @@ class QEConsoleLogger : public QELogger
 {
 public:
 
-    QE_API QEConsoleLogger();
-    QE_API ~QEConsoleLogger();
+    QEConsoleLogger();
+    ~QEConsoleLogger();
 
 public:
 
-    QE_API void Load();
-    QE_API void Log(const std::string& str);
+    void Load();
+    void Log(const std::string& str);
 
 };
 

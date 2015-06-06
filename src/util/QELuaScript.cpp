@@ -22,7 +22,7 @@ using namespace luabridge;
 \brief
 
 *******************************************************************************/
-QE_API QELuaScript::QELuaScript()
+QELuaScript::QELuaScript()
     :   QEScript("lua")
 {
 }
@@ -31,12 +31,12 @@ QE_API QELuaScript::QELuaScript()
 
 \name   LoadScript
 \param	QE_IN QEScriptObject * scriptObj
-\return QE_API QEScriptObject*
+\return QEScriptObject*
 
 \brief
 
 *******************************************************************************/
-QE_API QEScriptObject* QELuaScript::LoadScript(QE_IN QEScriptObject*& scriptObj)
+QEScriptObject* QELuaScript::LoadScript(QE_IN QEScriptObject*& scriptObj)
 {
     if(!scriptObj)
         return 0;
@@ -75,12 +75,12 @@ QE_API QEScriptObject* QELuaScript::LoadScript(QE_IN QEScriptObject*& scriptObj)
 
 \name   LoadScript
 \param	QE_IN const std::string & filePath
-\return QE_API QEScriptObject*
+\return QEScriptObject*
 
 \brief
 
 *******************************************************************************/
-QE_API QEScriptObject* QELuaScript::LoadScript(QE_IN const std::string& filePath)
+QEScriptObject* QELuaScript::LoadScript(QE_IN const std::string& filePath)
 {
     QELuaScriptObject* luaScriptObj = new QELuaScriptObject();
     luaScriptObj->luaState_ = luaL_newstate();
@@ -110,12 +110,12 @@ QE_API QEScriptObject* QELuaScript::LoadScript(QE_IN const std::string& filePath
 
 \name   UnloadScript
 \param	QE_IN QEScriptObject * scriptObj
-\return QE_API void
+\return void
 
 \brief
 
 *******************************************************************************/
-QE_API void QELuaScript::UnloadScript(QE_IN QEScriptObject*& scriptObj)
+void QELuaScript::UnloadScript(QE_IN QEScriptObject*& scriptObj)
 {
     QELuaScriptObject*& luaScriptObj = reinterpret_cast<QELuaScriptObject*&>(scriptObj);
     lua_close(luaScriptObj->luaState_);
@@ -128,12 +128,12 @@ QE_API void QELuaScript::UnloadScript(QE_IN QEScriptObject*& scriptObj)
 \name   RunScript
 \param	QE_IN_OPT QEScriptObject * scriptObj
 \param	QE_IN const std::string & filePath
-\return QE_API QEScriptObject*
+\return QEScriptObject*
 
 \brief
 
 *******************************************************************************/
-QE_API QEScriptObject* QELuaScript::RunScript(QE_IN_OPT QEScriptObject* scriptObj,
+QEScriptObject* QELuaScript::RunScript(QE_IN_OPT QEScriptObject* scriptObj,
                                               QE_IN const std::string& filePath)
 {
     return 0;
@@ -143,12 +143,12 @@ QE_API QEScriptObject* QELuaScript::RunScript(QE_IN_OPT QEScriptObject* scriptOb
 
 \name   ErrorCheck
 \param	QE_IN QEScriptObject * scriptObj
-\return QE_API QE_INT
+\return QE_INT
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QELuaScript::ErrorCheck(QE_IN QEScriptObject*& scriptObj)
+QE_BOOL QELuaScript::ErrorCheck(QE_IN QEScriptObject*& scriptObj)
 {
     switch(scriptObj->status_)
     {
@@ -176,12 +176,12 @@ QE_API QE_BOOL QELuaScript::ErrorCheck(QE_IN QEScriptObject*& scriptObj)
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT QE_BOOL * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QELuaScript::GetBool(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QELuaScript::GetBool(QE_IN QEScriptObject*& scriptObj,
                                     QE_IN const std::string& varName,
                                     QE_OUT QE_BOOL* var)
 {
@@ -211,12 +211,12 @@ QE_API QE_BOOL QELuaScript::GetBool(QE_IN QEScriptObject*& scriptObj,
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT QE_INT * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QELuaScript::GetInt(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QELuaScript::GetInt(QE_IN QEScriptObject*& scriptObj,
                                    QE_IN const std::string& varName,
                                    QE_OUT QE_INT* var)
 {
@@ -246,12 +246,12 @@ QE_API QE_BOOL QELuaScript::GetInt(QE_IN QEScriptObject*& scriptObj,
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT QE_FLOAT * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QELuaScript::GetFloat(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QELuaScript::GetFloat(QE_IN QEScriptObject*& scriptObj,
                                      QE_IN const std::string& varName,
                                      QE_OUT QE_FLOAT* var)
 {
@@ -281,12 +281,12 @@ QE_API QE_BOOL QELuaScript::GetFloat(QE_IN QEScriptObject*& scriptObj,
 \param	QE_IN QEScriptObject * & scriptObj
 \param	QE_IN const std::string & varName
 \param	QE_OUT std::string * var
-\return QE_API QE_BOOL
+\return QE_BOOL
 
 \brief
 
 *******************************************************************************/
-QE_API QE_BOOL QELuaScript::GetString(QE_IN QEScriptObject*& scriptObj,
+QE_BOOL QELuaScript::GetString(QE_IN QEScriptObject*& scriptObj,
                                       QE_IN const std::string& varName,
                                       QE_OUT std::string* var)
 {
