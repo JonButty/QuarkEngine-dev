@@ -55,6 +55,12 @@ public:
                                      QE_OUT std::string* var) = 0;
     //virtual QE_DOUBLE GetTable(QE_IN QEScriptObject*& scriptObj,
     //                                  QE_IN const std::string& varName) = 0;
+
+private:
+
+	// C4512
+	QEScript& operator=(const QEScript&) {}
+
 private:
 
     const std::string ext_;

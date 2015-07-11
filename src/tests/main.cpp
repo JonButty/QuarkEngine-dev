@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
+//#include "gmock/gmock.h"
+//#include "gtest/gtest.h"
 
 #include <iostream>
 #include <fstream>
@@ -20,8 +20,8 @@ int main(int argc, char ** argv)
     //QELogManager::InstancePtr()->Load();
     //QEScriptManager::InstancePtr()->Load();
     
-    ::testing::InitGoogleTest(&argc,argv);
-    return RUN_ALL_TESTS();
+    //::testing::InitGoogleTest(&argc,argv);
+    //return RUN_ALL_TESTS();
 
     /*
     if(argc == 1)

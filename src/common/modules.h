@@ -4,6 +4,7 @@
 \date 	2015/05/22
 \author	Jonathan Butt
 \brief	Add appropriate code to declare modules. Currently not order specific
+		This is to guarantee that the modules will be loaded and initialized
 
 *******************************************************************************/
 

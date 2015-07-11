@@ -12,11 +12,11 @@
 
 #include "common/QEDefines.h"
 #include "common/QETypes.h"
-#include "core/QEModuleManager.h"
+#include "util/QESingleton.h"
 
 #include <string>
 
-class QEModule
+class QEModule : public QESingleton <QEModule>
 {
 public:
 
@@ -30,27 +30,27 @@ public:
 
 public:
 
-    virtual int Load()
+    virtual QE_INT Load()
     {
         return 0;
     }
 
-    virtual int Initialize()
+    virtual QE_INT Initialize()
     {
         return 0;
     }
 
-    virtual int Update()
+    virtual QE_INT Update()
     {
         return 0;
     }
 
-    virtual int Deinitialize()
+    virtual QE_INT Deinitialize()
     {
         return 0;
     }
 
-    virtual int Unload()
+    virtual QE_INT Unload()
     {
         return 0;
     }

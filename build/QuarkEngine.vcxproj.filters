@@ -78,7 +78,6 @@
     <ClCompile Include="..\src\util\QEScriptManager.cpp">
       <Filter>util\Scripting</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\core\QEModuleManager.cpp" />
     <ClCompile Include="..\src\core\QEBootstraper.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -153,9 +152,6 @@
     </ClInclude>
     <ClInclude Include="..\src\common\modules.h">
       <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\core\QEModuleManager.h">
-      <Filter>core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

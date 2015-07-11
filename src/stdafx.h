@@ -11,7 +11,6 @@
 #include "common/modules.h"
 
 #include "core/QEBootstraper.h"
-#include "core/QEModuleManager.h"
 
 #include "util/QELog.h"
 #include "util/QEScriptManager.h"

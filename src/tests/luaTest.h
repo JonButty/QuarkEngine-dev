@@ -2,9 +2,9 @@
 #define LUATEST_H
 
 #include "stdafx.h"
-#include "gtest/gtest.h"
+//#include "gtest/gtest.h"
 
-class LuaTest : public ::testing::Test
+class LuaTest //: public ::testing::Test
 {
 protected:
 

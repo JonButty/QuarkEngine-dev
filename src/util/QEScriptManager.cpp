@@ -89,7 +89,7 @@ QE_INT QEScriptManager::Unload()
 
 *******************************************************************************/
 QE_BOOL QEScriptManager::LoadScript(QE_IN_OUT QEScriptObject*& obj,
-                                           QE_IN const std::string& filePath)
+                                    QE_IN const std::string& filePath)
 {
     QE_LOGV("Loading script " << filePath);
 

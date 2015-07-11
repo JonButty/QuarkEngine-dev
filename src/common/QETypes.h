@@ -11,7 +11,7 @@
 #define QETYPES_H
 
 typedef bool                QE_BOOL;
-typedef signed char         QE_CHAR;
+typedef char				QE_CHAR;
 typedef unsigned char       QE_UCHAR;
 typedef signed short        QE_SHORT;
 typedef unsigned short      QE_USHORT;

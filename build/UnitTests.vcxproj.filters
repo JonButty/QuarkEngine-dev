@@ -5,9 +5,6 @@
     <ClCompile Include="..\src\tests\mathTest.cpp">
       <Filter>Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\tests\luaTest.cpp">
-      <Filter>Script</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Math">
@@ -22,8 +19,5 @@
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\src\tests\testCodes.h" />
-    <ClInclude Include="..\src\tests\luaTest.h">
-      <Filter>Script</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

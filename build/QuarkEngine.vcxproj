@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -15,7 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\core\QEBootstraper.cpp" />
-    <ClCompile Include="..\src\core\QEModuleManager.cpp" />
     <ClCompile Include="..\src\stdafx.cpp" />
     <ClCompile Include="..\src\util\QEConsoleLogger.cpp" />
     <ClCompile Include="..\src\util\QEFileSystem.cpp" />
@@ -30,7 +29,6 @@
     <ClInclude Include="..\src\common\QEDefines.h" />
     <ClInclude Include="..\src\common\QETypes.h" />
     <ClInclude Include="..\src\core\QEBootstraper.h" />
-    <ClInclude Include="..\src\core\QEModuleManager.h" />
     <ClInclude Include="..\src\math\QEInterpolate.h" />
     <ClInclude Include="..\src\math\QEAngle.h" />
     <ClInclude Include="..\src\math\QEQuaternion.h" />
@@ -61,13 +59,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -86,15 +84,19 @@
     <OutDir>..\bin\$(Configuration)\</OutDir>
     <IncludePath>..\dep\lua-5.2.3_Win32_dll12_lib\include;..\dep\LuaBridge-master\Source\LuaBridge\;..\dep\LuaBridge-master\Source\LuaBridge\detail\;$(IncludePath)</IncludePath>
     <TargetName>$(ProjectName)_D</TargetName>
-    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(ProjectName)$(Configuration)\</IntDir>
     <OutDir>..\bin\$(Configuration)\</OutDir>
     <IncludePath>..\dep\lua-5.2.3_Win32_dll12_lib\include;..\dep\LuaBridge-master\Source\LuaBridge\;..\dep\LuaBridge-master\Source\LuaBridge\detail\;$(IncludePath)</IncludePath>
-    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

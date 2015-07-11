@@ -30,6 +30,12 @@ public:
 
     QE_BOOL Load(QE_IN QE_INT argc,
                  QE_IN QE_CHAR ** argv);
+
+private:
+
+	void _loadModules();
+	void _unloadModules();
+
 };
 
 #endif

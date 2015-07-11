@@ -11,15 +11,14 @@
 
 #define QE_UNUSED(arg) arg;
 
-
 #define QE_MODULES_BEGIN \
-    typedef std::pair<bool,size_t> __MODULE_INFO;\
-    static __MODULE_INFO __QEMODULES [] = { __MODULE_INFO{false,0}
+    static QEModule* __QEMODULES [] = {
 
 #define QE_DECLARE_MODULE(module)\
-    , QEModuleManager::InstancePtr()->RegisterModule(new module())
+    module::InstancePtr(),
 
-#define QE_MODULES_END };
+#define QE_MODULES_END 0 };
 
-#define  QE_GET_MODULE(module) QEModuleManager::InstancePtr()->GetModule(module())
+#define QE_MODULE_PTR(module) reinterpret_cast<module*>(module::InstancePtr())
+
 #endif
