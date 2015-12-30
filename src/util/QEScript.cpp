@@ -75,7 +75,7 @@ QE_INT QEScript::Unload()
 
 *******************************************************************************/
 QEScriptObject* QEScript::RunScript(QE_IN_OPT QEScriptObject* scriptObj,
-                                           QE_IN const std::string& filePath)
+                                    QE_IN const std::string& filePath)
 {
     return 0;
 }
