@@ -9,7 +9,7 @@
 #ifndef QEQUATERNION_H
 #define QEQUATERNION_H
 
-#include "QEVector4.h"
+#include "QEVector4.h"sdfdsf
 
 template <typename T>
 class QEQuaternion : public QEVector4 <T>
